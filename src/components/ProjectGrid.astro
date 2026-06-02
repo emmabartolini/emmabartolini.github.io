@@ -1,0 +1,104 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { t, type Lang } from '../i18n/translations';
+
+interface Project {
+  title: string;
+  category: 'design' | 'writing' | 'education';
+  year: number;
+  thumbnail?: string;
+  slug: string;
+  hasDetail: boolean;
+  description?: string;
+  role?: string;
+}
+
+interface Props {
+  projects: Project[];
+  lang: Lang;
+  showFilters?: boolean;
+}
+
+const { projects, lang, showFilters = false } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  design: '#FF5733',
+  writing: '#2563EB',
+  education: '#16A34A',
+};
+---
+
+{showFilters && (
+  <div class="flex flex-wrap gap-2 mb-10" id="filter-tabs" role="group" aria-label="Filtra per categoria">
+    <button class="filter-btn active" data-filter="all">{t(lang, 'filter.all')}</button>
+    <button class="filter-btn" data-filter="design" data-color={categoryColors.design}>{t(lang, 'filter.design')}</button>
+    <button class="filter-btn" data-filter="writing" data-color={categoryColors.writing}>{t(lang, 'filter.writing')}</button>
+    <button class="filter-btn" data-filter="education" data-color={categoryColors.education}>{t(lang, 'filter.education')}</button>
+  </div>
+)}
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12" id="projects-grid">
+  {projects.map((project) => (
+    <ProjectCard
+      title={project.title}
+      category={project.category}
+      year={project.year}
+      thumbnail={project.thumbnail}
+      slug={project.slug}
+      hasDetail={project.hasDetail}
+      lang={lang}
+      description={project.description}
+      role={project.role}
+    />
+  ))}
+</div>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('#filter-tabs .filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('#projects-grid .project-card');
+
+  const inkColor = '#3B0310';
+  const creamColor = '#F5F0E8';
+
+  function applyActiveStyle(btn: HTMLButtonElement) {
+    const color = btn.dataset.color ?? inkColor;
+    btn.style.backgroundColor = color;
+    btn.style.color = creamColor;
+    btn.style.borderColor = color;
+  }
+
+  function clearActiveStyle(btn: HTMLButtonElement) {
+    btn.style.removeProperty('background-color');
+    btn.style.removeProperty('color');
+    btn.style.removeProperty('border-color');
+  }
+
+  if (tabs.length > 0) {
+    const initialActive = document.querySelector<HTMLButtonElement>('#filter-tabs .filter-btn.active');
+    if (initialActive) applyActiveStyle(initialActive);
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('mouseenter', () => {
+        if (!tab.classList.contains('active')) applyActiveStyle(tab);
+      });
+      tab.addEventListener('mouseleave', () => {
+        if (!tab.classList.contains('active')) clearActiveStyle(tab);
+      });
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter ?? 'all';
+
+        tabs.forEach((t) => {
+          t.classList.remove('active');
+          clearActiveStyle(t);
+        });
+        tab.classList.add('active');
+        applyActiveStyle(tab);
+
+        cards.forEach((card) => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.setAttribute('data-hidden', match ? 'false' : 'true');
+        });
+      });
+    });
+  }
+</script>

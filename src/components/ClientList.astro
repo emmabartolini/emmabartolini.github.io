@@ -1,0 +1,30 @@
+---
+interface Client {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  clients: Client[];
+}
+
+const { clients } = Astro.props;
+---
+
+<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-1">
+  {clients.map((client) => (
+    <li>
+      <a
+        href={client.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-2 py-3 border-b border-ink/10 font-body text-sm hover:border-ink/40 transition-colors duration-200"
+        style="letter-spacing: -0.02em;"
+      >
+        <span class="opacity-40 group-hover:opacity-100 transition-opacity duration-200 font-serif text-xs">→</span>
+        <span class="group-hover:opacity-70 transition-opacity duration-200">{client.name}</span>
+        <span class="ml-auto opacity-0 group-hover:opacity-30 transition-opacity duration-200 font-serif text-xs">↗</span>
+      </a>
+    </li>
+  ))}
+</ul>

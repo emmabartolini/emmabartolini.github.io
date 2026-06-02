@@ -1,0 +1,109 @@
+[
+  {
+    "title": "Interni Magazine - Fuorisalone 2026",
+    "type": "long form",
+    "expandable": true,
+    "articles": [
+      { "title": "Sei giorni in cui sembra sempre venerdì", "type": "long form" },
+      { "title": "Clubbing al Fuorisalone: perché ballare è una questione di design", "type": "long form" }
+    ]
+  },
+  {
+    "title": "Zero.eu X Campari - Fuorisalone 2026",
+    "type": "long form",
+    "expandable": true,
+    "articles": [
+      { "title": "Un'icona di design si aggira per il Fuorisalone con una serie di «Aperitivi a Caso»", "type": "long form" }
+    ]
+  },
+  {
+    "title": "Unobravo - Marketing copywriting support",
+    "type": "marketing paid copywrite",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Mondi nel mondo: Storie per abitare il Pluriverso",
+    "type": "short stories",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu X Volvo Studio Milano - Guida 2025",
+    "type": "long form",
+    "expandable": true,
+    "articles": [
+      { "title": "Nuove configurazioni potenziali: Volvo Studio Milano 2025", "type": "long form" },
+      { "title": "La guida di Zero agli eventi di marzo di Volvo Studio Milano 2025", "type": "long form" },
+      { "title": "La guida di Zero agli eventi di aprile e maggio di Volvo Studio Milano 2025", "type": "long form" },
+      { "title": "La guida di Zero agli eventi di giugno di Volvo Studio Milano 2025", "type": "long form" },
+      { "title": "Rumore In Studio | Popa", "type": "short form" },
+      { "title": "TANDEM. Un palco per due Nina Zilli con Simone Matteuzzi", "type": "short form" },
+      { "title": "Lezioni Aperte | David Chan - Concerto finale degli allievi", "type": "short form" },
+      { "title": "Rumore In Studio | Coca Puma", "type": "short form" },
+      { "title": "Visioni Diacroniche | Marzia Migliora", "type": "short form" },
+      { "title": "Rumore In Studio | Marta del Grandi", "type": "short form" },
+      { "title": "BAMOff Performing Arts: DEAR CHATBOT", "type": "short form" },
+      { "title": "Salvo Di Paola Stand-Up Comedy Live", "type": "short form" },
+      { "title": "Rumore in Studio | Any others", "type": "short form" },
+      { "title": "BAM Off | Due Tasti", "type": "short form" },
+      { "title": "Piano City: Andrea Morricone Piano Lesson", "type": "short form" },
+      { "title": "EMERGENTISSIMI: Nicole Bullet, Lorenzo Benedusi", "type": "short form" },
+      { "title": "BAMoff Performing Arts: RITUALI SPONTANEI — Original sounds from a future world", "type": "short form" },
+      { "title": "La guida di Zero agli eventi di settembre e ottobre di Volvo Studio Milano 2025", "type": "long form" },
+      { "title": "La guida di Zero agli eventi di novembre e dicembre di Volvo Studio Milano 2025", "type": "long form" },
+      { "title": "JAZZMI | Ëda Diaz", "type": "short form" },
+      { "title": "Ariella Vidach AiEP Kōreosfera", "type": "short form" },
+      { "title": "JAZZMI | Amy Gadiaga", "type": "short form" },
+      { "title": "I Metameccanici & Pacifico presentano: TURBO LENTO - Il turbolento viaggio della PV 544", "type": "short form" }
+    ]
+  },
+  {
+    "title": "Zero.eu X Il mito delle donne Festival",
+    "type": "long form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu - Roberto Sambonet: La teoria della forma",
+    "type": "long form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu - Museo del Design Italiano. Forme mobili",
+    "type": "long form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu - Guida Fuorisalone 2024",
+    "type": "short form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu - Inga Sempé: La casa imperfetta",
+    "type": "short form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu X BIM Milano - Summer Season 2024",
+    "type": "long form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu X BIM Milano - BIM Fest 2024",
+    "type": "short form",
+    "expandable": false,
+    "articles": []
+  },
+  {
+    "title": "Zero.eu X BIM Milano - BiM Summer Season: Open Evening",
+    "type": "short form",
+    "expandable": false,
+    "articles": []
+  }
+]

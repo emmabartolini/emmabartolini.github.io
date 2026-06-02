@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Marquee from '../../components/Marquee.astro';
+import ProjectGrid from '../../components/ProjectGrid.astro';
+import ClientList from '../../components/ClientList.astro';
+import { t, type Lang } from '../../i18n/translations';
+import { staticLangPaths } from '../../i18n/utils';
+import clients from '../../data/clients.json';
+
+export function getStaticPaths() {
+  return staticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+const allProjects = await getCollection('projects', (entry) =>
+  entry.id.startsWith(`${lang}/`)
+);
+
+const projects = allProjects
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0) || b.data.year - a.data.year)
+  .map((entry) => ({
+    title: entry.data.title,
+    category: entry.data.category,
+    year: entry.data.year,
+    thumbnail: entry.data.thumbnail,
+    slug: entry.slug.replace(`${lang}/`, ''),
+    hasDetail: entry.data.hasDetail,
+    description: entry.data.description,
+    role: entry.data.role,
+  }));
+---
+
+<BaseLayout title="Portfolio" lang={lang}>
+  <section class="max-w-7xl mx-auto px-6 pt-80 pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h1 class="font-serif text-7xl sm:text-8xl leading-none mb-8" style="letter-spacing: -0.06em;">
+          {t(lang, 'hero.greeting')}
+        </h1>
+        <p class="font-body text-xl leading-relaxed max-w-xl opacity-80" style="letter-spacing: -0.04em;">
+          {t(lang, 'hero.bio')}
+        </p>
+      </div>
+      <div class="flex items-center justify-center bg-ink/5 rounded-sm h-48 lg:h-full">
+        <span class="font-serif text-sm opacity-20" style="letter-spacing: -0.04em;">illustrazione</span>
+      </div>
+    </div>
+  </section>
+
+  <Marquee text={t(lang, 'marquee.text')} />
+
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-4">
+    <p class="section-label">{t(lang, 'section.works')}</p>
+    <ProjectGrid projects={projects} lang={lang} showFilters={true} />
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pt-24 pb-4">
+    <p class="section-label">{t(lang, 'section.clients')}</p>
+    <ClientList clients={clients} />
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pt-24 pb-20">
+    <p class="section-label">{t(lang, 'section.contact')}</p>
+    <p class="font-serif text-2xl sm:text-3xl lg:text-4xl leading-snug max-w-2xl mb-12" style="letter-spacing: -0.06em;">
+      {t(lang, 'contact.text')}
+    </p>
+    <a
+      href="mailto:emmabartolini23@gmail.com"
+      class="font-serif text-2xl sm:text-3xl lg:text-4xl border-b border-ink/40 pb-0.5 hover:border-ink transition-colors"
+      style="letter-spacing: -0.04em;"
+    >
+      emmabartolini23@gmail.com
+    </a>
+  </section>
+</BaseLayout>

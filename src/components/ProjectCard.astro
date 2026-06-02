@@ -1,0 +1,81 @@
+---
+import type { Lang } from '../i18n/translations';
+import { t } from '../i18n/translations';
+
+interface Props {
+  title: string;
+  category: 'design' | 'writing' | 'education';
+  year: number;
+  thumbnail?: string;
+  slug: string;
+  hasDetail: boolean;
+  lang: Lang;
+  description?: string;
+  role?: string;
+}
+
+const { title, category, year, thumbnail, slug, hasDetail, lang, description, role } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  design: '#FF5733',
+  writing: '#2563EB',
+  education: '#16A34A',
+};
+
+const categoryPaths: Record<string, string> = {
+  design: 'design',
+  writing: 'writing',
+  education: 'education',
+};
+
+const color = categoryColors[category];
+const detailHref = hasDetail ? `/${lang}/${categoryPaths[category]}/${slug}/` : null;
+const categoryLabel = t(lang, `category.${category}` as any);
+---
+
+<div class="project-card group" data-category={category}>
+  {detailHref ? (
+    <a href={detailHref} class="block">
+      <div class="overflow-hidden aspect-[4/3] bg-ink/5 mb-4">
+        {thumbnail
+          ? <img src={thumbnail} alt={title} class="w-full h-full object-cover" loading="lazy" />
+          : <div class="w-full h-full flex items-end p-4">
+              <span class="font-serif text-sm opacity-30" style="letter-spacing: -0.04em;">{title}</span>
+            </div>
+        }
+      </div>
+      <div class="border-t border-ink/15 pt-3">
+        <span class="font-serif text-xs" style={`color: ${color}; letter-spacing: -0.02em;`}>
+          ● {categoryLabel}
+        </span>
+        <h3 class="font-serif text-base mt-1 mb-1 leading-snug" style="letter-spacing: -0.06em;">
+          {title}
+        </h3>
+        <div class="flex justify-between items-center">
+          <span class="font-body text-xs opacity-40">{year}{role && ` · ${role}`}</span>
+          <span class="font-serif text-sm opacity-60 group-hover:opacity-100 transition-opacity">↗</span>
+        </div>
+      </div>
+    </a>
+  ) : (
+    <div>
+      <div class="overflow-hidden aspect-[4/3] bg-ink/5 mb-4">
+        {thumbnail
+          ? <img src={thumbnail} alt={title} class="w-full h-full object-cover" loading="lazy" />
+          : <div class="w-full h-full flex items-end p-4">
+              <span class="font-serif text-sm opacity-30" style="letter-spacing: -0.04em;">{title}</span>
+            </div>
+        }
+      </div>
+      <div class="border-t border-ink/15 pt-3">
+        <span class="font-serif text-xs" style={`color: ${color}; letter-spacing: -0.02em;`}>
+          ● {categoryLabel}
+        </span>
+        <h3 class="font-serif text-base mt-1 mb-1 leading-snug" style="letter-spacing: -0.06em;">
+          {title}
+        </h3>
+        <span class="font-body text-xs opacity-40">{year}{role && ` · ${role}`}</span>
+      </div>
+    </div>
+  )}
+</div>

@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectGrid from '../../../components/ProjectGrid.astro';
+import { t, type Lang } from '../../../i18n/translations';
+import { staticLangPaths } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return staticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+const allProjects = await getCollection('projects', (entry) =>
+  entry.id.startsWith(`${lang}/`) && entry.data.category === 'education'
+);
+
+const projects = allProjects
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0) || b.data.year - a.data.year)
+  .map((entry) => ({
+    title: entry.data.title,
+    category: entry.data.category,
+    year: entry.data.year,
+    thumbnail: entry.data.thumbnail,
+    slug: entry.slug.replace(`${lang}/`, ''),
+    hasDetail: entry.data.hasDetail,
+    description: entry.data.description,
+    role: entry.data.role,
+  }));
+---
+
+<BaseLayout title={t(lang, 'nav.education')} lang={lang}>
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-20">
+    <h1 class="font-serif text-4xl sm:text-5xl mb-6 max-w-2xl" style="letter-spacing: -0.06em;">
+      {t(lang, 'nav.education')}
+    </h1>
+    <p class="font-body text-base opacity-70 max-w-lg mb-16" style="letter-spacing: -0.04em;">
+      {t(lang, 'page.education.intro')}
+    </p>
+    <ProjectGrid projects={projects} lang={lang} showFilters={false} />
+  </div>
+</BaseLayout>

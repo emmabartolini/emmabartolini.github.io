@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { t, type Lang } from '../../../i18n/translations';
+import { staticLangPaths } from '../../../i18n/utils';
+import writingData from '../../../data/writing.json';
+
+export function getStaticPaths() {
+  return staticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<BaseLayout title={t(lang, 'nav.writing')} lang={lang}>
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-20">
+    <h1 class="font-serif text-4xl sm:text-5xl mb-6 max-w-2xl" style="letter-spacing: -0.06em;">
+      {t(lang, 'nav.writing')}
+    </h1>
+    <p class="font-body opacity-70 max-w-lg mb-16" style="letter-spacing: -0.04em; font-size: 1.25rem; line-height: 1.75rem;">
+      {t(lang, 'page.writing.intro')}
+    </p>
+
+    <ul class="max-w-2xl ml-auto">
+      {writingData.map((item, i) => (
+        <li class="writing-item border-b border-ink/15" data-expandable={item.expandable}>
+          {item.expandable ? (
+            <button
+              class="writing-toggle w-full flex items-baseline justify-between gap-4 py-4 text-left group"
+              aria-expanded="false"
+            >
+              <span class="font-serif text-base leading-snug" style="letter-spacing: -0.06em;">{item.title}</span>
+              <span class="flex items-center gap-3 shrink-0">
+                <span class="font-serif text-xs opacity-40" style="letter-spacing: -0.02em;">{item.type}</span>
+                <span class="writing-arrow font-serif text-sm opacity-40 group-hover:opacity-100 transition-opacity select-none">+</span>
+              </span>
+            </button>
+          ) : (
+            <div class="flex items-baseline justify-between gap-4 py-4">
+              <span class="font-serif text-base leading-snug" style="letter-spacing: -0.06em;">{item.title}</span>
+              <span class="font-serif text-xs opacity-40 shrink-0" style="letter-spacing: -0.02em;">{item.type}</span>
+            </div>
+          )}
+
+          {item.expandable && item.articles.length > 0 && (
+            <ul class="writing-sub hidden pb-4 pl-4 flex-col gap-0">
+              {item.articles.map((article) => (
+                <li class="flex items-baseline justify-between gap-4 py-2 border-b border-ink/8">
+                  <span class="font-body opacity-70" style="letter-spacing: -0.04em; font-size: 0.875rem;">{article.title}</span>
+                  <span class="font-serif text-xs opacity-30 shrink-0" style="letter-spacing: -0.02em;">{article.type}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.writing-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.writing-item')!;
+      const sub = item.querySelector<HTMLElement>('.writing-sub');
+      const arrow = btn.querySelector<HTMLElement>('.writing-arrow');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (sub) {
+        sub.classList.toggle('hidden', expanded);
+        sub.classList.toggle('flex', !expanded);
+      }
+      if (arrow) arrow.textContent = expanded ? '+' : '−';
+    });
+  });
+</script>

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&family=Shippori+Mincho:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-ink font-body;
+    letter-spacing: -0.06em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    letter-spacing: -0.06em;
+  }
+
+  a {
+    @apply transition-opacity duration-200;
+  }
+
+  a:hover {
+    @apply opacity-70;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-xs font-serif uppercase tracking-widest opacity-50 mb-6;
+    letter-spacing: 0.15em;
+  }
+
+  .filter-btn {
+    @apply text-sm font-serif px-4 py-2 border border-ink/20 rounded-full transition-all duration-200;
+    letter-spacing: -0.04em;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    @apply bg-ink text-cream border-ink;
+  }
+
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 37.5s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Project card hover */
+.project-card img {
+  transition: transform 0.4s ease;
+}
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Hidden by filter */
+.project-card[data-hidden="true"] {
+  display: none;
+}
+
+/* Prose for project detail */
+.prose-project h2 {
+  @apply font-serif text-2xl mt-12 mb-4;
+  letter-spacing: -0.06em;
+}
+.prose-project p {
+  @apply font-body text-base leading-relaxed mb-6 opacity-90;
+}
+.prose-project img {
+  @apply w-full rounded-sm my-8;
+}
+.prose-project blockquote {
+  @apply border-l-2 border-ink/30 pl-6 italic my-8 opacity-80;
+}

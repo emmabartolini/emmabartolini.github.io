@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { t, type Lang } from '../../../i18n/translations';
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection('projects');
+  return allProjects
+    .filter((entry) => entry.data.category === 'design' && entry.data.hasDetail)
+    .map((entry) => {
+      const lang = entry.id.split('/')[0] as Lang;
+      const slug = entry.slug.replace(`${lang}/`, '');
+      return { params: { lang, slug }, props: { entry } };
+    });
+}
+
+const { entry } = Astro.props;
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { Content } = await entry.render();
+
+const allProjects = await getCollection('projects', (e) =>
+  e.id.startsWith(`${lang}/`) && e.data.category === 'design' && e.data.hasDetail
+);
+allProjects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const currentIndex = allProjects.findIndex((p) => p.slug.replace(`${lang}/`, '') === slug);
+const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
+const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
+---
+
+<BaseLayout title={entry.data.title} lang={lang}>
+  <div class="max-w-7xl mx-auto px-6 pt-10">
+    <a
+      href={`/${lang}/design/`}
+      class="font-serif text-sm opacity-50 hover:opacity-100 transition-opacity inline-block mb-12"
+      style="letter-spacing: -0.04em;"
+    >
+      {t(lang, 'project.back.design')}
+    </a>
+
+    <div class="max-w-3xl">
+      <span class="font-serif text-xs" style="color: #FF5733; letter-spacing: -0.02em;">
+        ● {t(lang, 'category.design')} · {entry.data.year}
+      </span>
+      <h1 class="font-serif text-4xl sm:text-5xl mt-3 mb-6 leading-tight" style="letter-spacing: -0.06em;">
+        {entry.data.title}
+      </h1>
+      {(entry.data.client || entry.data.role) && (
+        <p class="font-body text-sm opacity-50 mb-10" style="letter-spacing: -0.02em;">
+          {[entry.data.client, entry.data.role].filter(Boolean).join(' · ')}
+        </p>
+      )}
+    </div>
+  </div>
+
+  {entry.data.cover && (
+    <div class="max-w-7xl mx-auto px-6 mb-12">
+      <img
+        src={entry.data.cover}
+        alt={entry.data.title}
+        class="w-full aspect-video object-cover"
+        loading="eager"
+      />
+    </div>
+  )}
+
+  {entry.data.intro && (
+    <div class="max-w-2xl mx-auto px-6 mb-16">
+      <p class="font-body leading-relaxed opacity-80" style="letter-spacing: -0.04em; font-size: 1.125rem; line-height: 1.8;">
+        {entry.data.intro}
+      </p>
+    </div>
+  )}
+
+  {entry.data.gallery && entry.data.gallery.length > 0 && (
+    <div class="mb-16 overflow-x-auto">
+      <div class="flex gap-4 px-6 pb-4" style="width: max-content;">
+        {entry.data.gallery.map((img: string) => (
+          <img
+            src={img}
+            alt=""
+            class="h-72 w-auto object-cover shrink-0"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div class="max-w-2xl mx-auto px-6 pb-20 prose-project">
+    <Content />
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 pb-20 border-t border-ink/10 pt-10 flex justify-between items-center">
+    {prevProject ? (
+      <a
+        href={`/${lang}/design/${prevProject.slug.replace(`${lang}/`, '')}/`}
+        class="font-serif text-sm opacity-50 hover:opacity-100 transition-opacity"
+        style="letter-spacing: -0.04em;"
+      >
+        {t(lang, 'project.prev')}
+      </a>
+    ) : <span />}
+    {nextProject ? (
+      <a
+        href={`/${lang}/design/${nextProject.slug.replace(`${lang}/`, '')}/`}
+        class="font-serif text-sm opacity-50 hover:opacity-100 transition-opacity"
+        style="letter-spacing: -0.04em;"
+      >
+        {t(lang, 'project.next')}
+      </a>
+    ) : <span />}
+  </div>
+</BaseLayout>

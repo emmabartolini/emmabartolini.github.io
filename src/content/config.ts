@@ -1,0 +1,28 @@
+import { defineCollection, z } from 'astro:content';
+
+const projects = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    category: z.enum(['design', 'writing', 'education']),
+    year: z.number(),
+    description: z.string(),
+    thumbnail: z.string().optional(),
+    hasDetail: z.boolean().default(false),
+    client: z.string().optional(),
+    role: z.string().optional(),
+    cover: z.string().optional(),
+    intro: z.string().optional(),
+    gallery: z.array(z.string()).optional(),
+    order: z.number().default(0),
+  }),
+});
+
+const pages = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
+export const collections = { projects, pages };

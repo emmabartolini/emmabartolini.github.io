@@ -1,0 +1,14 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+const repeated = text.repeat(8);
+---
+
+<div class="overflow-hidden bg-ink text-cream py-3 select-none">
+  <div class="marquee-track font-serif text-sm whitespace-nowrap" style="letter-spacing: -0.04em;">
+    <span class="px-2">{repeated}</span>
+    <span class="px-2" aria-hidden="true">{repeated}</span>
+  </div>
+</div>

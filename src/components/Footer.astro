@@ -1,0 +1,51 @@
+---
+import { type Lang } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<footer class="border-t border-ink/10 mt-24">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <a href={`/${lang}/`} class="font-serif text-sm opacity-60" style="letter-spacing: -0.06em;">
+      emma
+    </a>
+
+    <div class="flex items-center gap-6">
+      <a
+        href="https://www.linkedin.com/in/emmabartolini"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-serif text-xs opacity-50 hover:opacity-100"
+        style="letter-spacing: -0.04em;"
+      >
+        LinkedIn
+      </a>
+      <a
+        href="https://www.instagram.com/emmabartolini"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-serif text-xs opacity-50 hover:opacity-100"
+        style="letter-spacing: -0.04em;"
+      >
+        Instagram
+      </a>
+      <a
+        href="https://vimeo.com/emmabartolini"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-serif text-xs opacity-50 hover:opacity-100"
+        style="letter-spacing: -0.04em;"
+      >
+        Vimeo
+      </a>
+    </div>
+
+    <p class="font-body text-xs opacity-40" style="letter-spacing: -0.02em;">
+      © 2026 emma bartolini. Tutti i diritti riservati. È vietata la riproduzione, anche parziale, dei contenuti di questo sito senza autorizzazione scritta.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t, type Lang } from '../../i18n/translations';
+import { staticLangPaths } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return staticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+const bio = {
+  it: {
+    intro: `Sono Emma. Lavoro all'intersezione tra immagine, parola e spazio educativo — un territorio che non ha ancora un nome preciso, ma in cui mi muovo con curiosità e intenzione.`,
+    body: `Ho studiato [il tuo percorso di studi]. Nel tempo ho collaborato con istituzioni culturali, riviste, studi di design, piattaforme digitali e scuole. Ogni collaborazione mi ha insegnato qualcosa di diverso su come si comunica, si racconta, si insegna.
+
+Credo che la coerenza non venga dall'occuparsi di una sola cosa, ma dal modo in cui si fa quella cosa — qualunque essa sia.`,
+    services: ['Visual Design', 'Communication Design', 'Content Writing', 'Videomaking', 'Curatela', 'Educazione'],
+    cv: 'Scarica il CV',
+  },
+  en: {
+    intro: `I'm Emma. I work at the intersection of image, word and educational space — a territory that doesn't yet have a precise name, but one I navigate with curiosity and intention.`,
+    body: `I studied [your education background]. Over time I've collaborated with cultural institutions, magazines, design studios, digital platforms and schools. Each collaboration has taught me something different about how we communicate, narrate, teach.
+
+I believe consistency doesn't come from doing one single thing, but from the way you do it — whatever it is.`,
+    services: ['Visual Design', 'Communication Design', 'Content Writing', 'Videomaking', 'Curation', 'Education'],
+    cv: 'Download CV',
+  },
+  pt: {
+    intro: `Sou a Emma. Trabalho na interseção entre imagem, palavra e espaço educacional — um território que ainda não tem nome preciso, mas no qual me movo com curiosidade e intenção.`,
+    body: `Estudei [seu percurso educacional]. Com o tempo, colaborei com instituições culturais, revistas, estúdios de design, plataformas digitais e escolas. Cada colaboração me ensinou algo diferente sobre como comunicar, narrar, ensinar.
+
+Acredito que a coerência não vem de se dedicar a uma única coisa, mas da maneira como se faz essa coisa — seja ela qual for.`,
+    services: ['Visual Design', 'Communication Design', 'Redação de Conteúdo', 'Videomaking', 'Curadoria', 'Educação'],
+    cv: 'Baixar CV',
+  },
+};
+
+const content = bio[lang];
+---
+
+<BaseLayout title={t(lang, 'nav.about')} lang={lang}>
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-20">
+    <p class="section-label">{t(lang, 'nav.about')}</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+      <div>
+        <p class="font-body text-2xl sm:text-3xl leading-snug mb-8" style="letter-spacing: -0.04em;">
+          {content.intro}
+        </p>
+        <div class="font-body leading-relaxed opacity-80 space-y-4" style="letter-spacing: -0.03em; font-size: 1rem;">
+          {content.body.split('\n\n').map((para) => (
+            <p>{para}</p>
+          ))}
+        </div>
+        <a
+          href={`/cv-emma-${lang}.pdf`}
+          class="inline-block mt-8 font-serif text-sm border-b border-ink/40 pb-0.5 hover:border-ink transition-colors"
+          style="letter-spacing: -0.04em;"
+        >
+          {content.cv} ↓
+        </a>
+      </div>
+
+      <div>
+        <div class="aspect-[3/4] bg-ink/5 mb-8">
+          <div class="w-full h-full flex items-center justify-center opacity-20">
+            <span class="font-serif text-sm" style="letter-spacing: -0.04em;">foto</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="section-label mb-4">Servizi</p>
+          <ul class="space-y-2">
+            {content.services.map((service) => (
+              <li class="font-body text-sm border-b border-ink/10 py-2.5 flex items-center gap-3" style="letter-spacing: -0.02em;">
+                <span class="w-1.5 h-1.5 rounded-full bg-ink/40 flex-shrink-0"></span>
+                {service}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20">
+      <div class="border border-ink/15 p-6">
+        <p class="section-label mb-5">ora sto leggendo</p>
+        <ul class="space-y-3">
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Vicino al cuore selvaggio</span>
+            <span class="opacity-40"> — Clarice Lispector</span>
+          </li>
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Noites tropicais</span>
+            <span class="opacity-40"> — Motta</span>
+          </li>
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Futuro ancestral</span>
+            <span class="opacity-40"> — Ailton Krenak</span>
+          </li>
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Sotto il culo della rana</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border border-ink/15 p-6">
+        <p class="section-label mb-5">ultimi titoli letti</p>
+        <ul class="space-y-3">
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Agata e la pietra nera</span>
+            <span class="opacity-40"> — Ursula K. Le Guin</span>
+          </li>
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Il bar sotto il mare</span>
+            <span class="opacity-40"> — Stefano Benni</span>
+          </li>
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Una sera tra amici a Jinbocho</span>
+            <span class="opacity-40"> — Satoshi Yagisawa</span>
+          </li>
+          <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
+            <span class="opacity-80">Na ponta da lingua</span>
+            <span class="opacity-40"> — Galindo</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink/10 pt-16">
+      <p class="section-label">{t(lang, 'section.contact')}</p>
+      <p class="font-serif text-2xl sm:text-3xl leading-snug max-w-xl mb-8" style="letter-spacing: -0.06em;">
+        {t(lang, 'contact.text')}
+      </p>
+      <a
+        href="mailto:emmabartolini23@gmail.com"
+        class="font-serif text-2xl sm:text-3xl border-b border-ink/40 pb-0.5 hover:border-ink transition-colors"
+        style="letter-spacing: -0.04em;"
+      >
+        emmabartolini23@gmail.com
+      </a>
+    </div>
+  </div>
+</BaseLayout>

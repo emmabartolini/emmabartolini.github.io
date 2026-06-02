@@ -1,0 +1,10 @@
+[
+  { "name": "Nome Cliente", "url": "https://example.com" },
+  { "name": "Studio XYZ", "url": "https://example.com" },
+  { "name": "Rivista ABC", "url": "https://example.com" },
+  { "name": "Nome Collaboratore", "url": "https://example.com" },
+  { "name": "Istituzione Culturale", "url": "https://example.com" },
+  { "name": "Fondazione DEF", "url": "https://example.com" },
+  { "name": "Nome Amico/a", "url": "https://example.com" },
+  { "name": "Piattaforma GHI", "url": "https://example.com" }
+]
