@@ -6,7 +6,7 @@ thumbnail: "/images/condivisione14/thumbnail.jpg"
 hasDetail: true
 client: "Con.divisione"
 role: "graphic design, production support, community mediator"
-cover: "/images/condivisione14/cover.jpg"
+cover: "/images/condivisione14/cover.png"
 intro: >-
   Con.divisione è una residenza artistica fondata nel 2012 a Mola di Bari da Officina dell'Arte APS.
   Ogni edizione riunisce artisti italiani e internazionali per esplorare criticamente il presente
