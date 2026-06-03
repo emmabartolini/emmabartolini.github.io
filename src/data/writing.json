@@ -4,8 +4,8 @@
     "type": "long form",
     "expandable": true,
     "articles": [
-      { "title": "Sei giorni in cui sembra sempre venerdì", "type": "long form" },
-      { "title": "Clubbing al Fuorisalone: perché ballare è una questione di design", "type": "long form" }
+      { "title": "Sei giorni in cui sembra sempre venerdì", "type": "long form", "url": "https://www.internimagazine.it/fuorisalone-2026/sei-giorni-in-cui-sembra-sempre-venerdi/" },
+      { "title": "Clubbing al Fuorisalone: perché ballare è una questione di design", "type": "long form", "url": "https://www.internimagazine.it/fuorisalone-2026/clubbing-al-fuorisalone-perche-ballare-e-una-questione-di-design/" }
     ]
   },
   {
@@ -13,7 +13,7 @@
     "type": "long form",
     "expandable": true,
     "articles": [
-      { "title": "Un'icona di design si aggira per il Fuorisalone con una serie di «Aperitivi a Caso»", "type": "long form" }
+      { "title": "Un'icona di design si aggira per il Fuorisalone con una serie di «Aperitivi a Caso»", "type": "long form", "url": "https://zero.eu/it/news/unicona-di-design-si-aggira-per-il-fuorisalone-con-una-serie-di-aperitivi-a-caso-milano-design-week-2026/" }
     ]
   },
   {
@@ -26,36 +26,38 @@
     "title": "Mondi nel mondo: Storie per abitare il Pluriverso",
     "type": "short stories",
     "expandable": false,
+    "detailSlug": "mondi-nel-mondo",
     "articles": []
   },
   {
     "title": "Zero.eu X Volvo Studio Milano - Guida 2025",
     "type": "long form",
     "expandable": true,
+    "url": "https://zero.eu/it/sponsor/volvo-studio/",
     "articles": [
-      { "title": "Nuove configurazioni potenziali: Volvo Studio Milano 2025", "type": "long form" },
-      { "title": "La guida di Zero agli eventi di marzo di Volvo Studio Milano 2025", "type": "long form" },
-      { "title": "La guida di Zero agli eventi di aprile e maggio di Volvo Studio Milano 2025", "type": "long form" },
-      { "title": "La guida di Zero agli eventi di giugno di Volvo Studio Milano 2025", "type": "long form" },
-      { "title": "Rumore In Studio | Popa", "type": "short form" },
-      { "title": "TANDEM. Un palco per due Nina Zilli con Simone Matteuzzi", "type": "short form" },
-      { "title": "Lezioni Aperte | David Chan - Concerto finale degli allievi", "type": "short form" },
-      { "title": "Rumore In Studio | Coca Puma", "type": "short form" },
-      { "title": "Visioni Diacroniche | Marzia Migliora", "type": "short form" },
-      { "title": "Rumore In Studio | Marta del Grandi", "type": "short form" },
+      { "title": "Nuove configurazioni potenziali: Volvo Studio Milano 2025", "type": "long form", "url": "https://zero.eu/it/news/nuove-configurazioni-potenziali-volvo-studio-milano-2025/" },
+      { "title": "La guida di Zero agli eventi di marzo di Volvo Studio Milano 2025", "type": "long form", "url": "https://zero.eu/it/news/la-guida-di-zero-agli-eventi-di-marzo-di-volvo-studio-2025/" },
+      { "title": "La guida di Zero agli eventi di aprile e maggio di Volvo Studio Milano 2025", "type": "long form", "url": "https://zero.eu/it/news/la-guida-di-zero-agli-eventi-di-maggio-aprile-volvo-studio-2025/" },
+      { "title": "La guida di Zero agli eventi di giugno di Volvo Studio Milano 2025", "type": "long form", "url": "https://zero.eu/it/news/la-guida-di-zero-agli-eventi-di-giugno-a-volvo-studio-2025/" },
+      { "title": "Rumore In Studio | Popa", "type": "short form", "url": "https://zero.eu/it/eventi/328226-rumore-in-studio-popa-volvo-studio,milano/" },
+      { "title": "TANDEM. Un palco per due Nina Zilli con Simone Matteuzzi", "type": "short form", "url": "https://zero.eu/it/eventi/328763-volvo-studio-tandem-un-palco-per-due-nina-zilli-con-simone-matteuzzi,milano/" },
+      { "title": "Lezioni Aperte | David Chan - Concerto finale degli allievi", "type": "short form", "url": "https://zero.eu/it/eventi/328874-volvo-studio-lezioni-aperte-david-chan-concerto-finale-degli-allievi,milano/" },
+      { "title": "Rumore In Studio | Coca Puma", "type": "short form", "url": "https://zero.eu/it/eventi/328870-rumore-in-studio-coca-puma-volvo-studio,milano/" },
+      { "title": "Visioni Diacroniche | Marzia Migliora", "type": "short form", "url": "https://zero.eu/it/eventi/330632-visioni-diacroniche-marzia-migliora,milano/" },
+      { "title": "Rumore In Studio | Marta del Grandi", "type": "short form", "url": "https://zero.eu/it/eventi/330270-rumore-in-studio-marta-del-grandi-volvo-studio,milano/" },
       { "title": "BAMOff Performing Arts: DEAR CHATBOT", "type": "short form" },
-      { "title": "Salvo Di Paola Stand-Up Comedy Live", "type": "short form" },
-      { "title": "Rumore in Studio | Any others", "type": "short form" },
-      { "title": "BAM Off | Due Tasti", "type": "short form" },
-      { "title": "Piano City: Andrea Morricone Piano Lesson", "type": "short form" },
-      { "title": "EMERGENTISSIMI: Nicole Bullet, Lorenzo Benedusi", "type": "short form" },
-      { "title": "BAMoff Performing Arts: RITUALI SPONTANEI — Original sounds from a future world", "type": "short form" },
-      { "title": "La guida di Zero agli eventi di settembre e ottobre di Volvo Studio Milano 2025", "type": "long form" },
-      { "title": "La guida di Zero agli eventi di novembre e dicembre di Volvo Studio Milano 2025", "type": "long form" },
-      { "title": "JAZZMI | Ëda Diaz", "type": "short form" },
-      { "title": "Ariella Vidach AiEP Kōreosfera", "type": "short form" },
-      { "title": "JAZZMI | Amy Gadiaga", "type": "short form" },
-      { "title": "I Metameccanici & Pacifico presentano: TURBO LENTO - Il turbolento viaggio della PV 544", "type": "short form" }
+      { "title": "Salvo Di Paola Stand-Up Comedy Live", "type": "short form", "url": "https://zero.eu/it/eventi/332820-salvo-di-paola-stand-up-comedy-live-2,milano/" },
+      { "title": "Rumore in Studio | Any others", "type": "short form", "url": "https://zero.eu/it/eventi/334157-rumore-in-studio-any-other,milano/" },
+      { "title": "BAM Off | Due Tasti", "type": "short form", "url": "https://zero.eu/it/eventi/336672-bamoff-due-tasti-volvo-studio,milano/" },
+      { "title": "Piano City: Andrea Morricone Piano Lesson", "type": "short form", "url": "https://zero.eu/it/eventi/337988-piano-city-2025-andrea-morricone-piano-lesson,milano/" },
+      { "title": "EMERGENTISSIMI: Nicole Bullet, Lorenzo Benedusi", "type": "short form", "url": "https://zero.eu/it/eventi/340096-emergentissimi-nicole-bullet-lorenzo-benedusi,milano/" },
+      { "title": "BAMoff Performing Arts: RITUALI SPONTANEI — Original sounds from a future world", "type": "short form", "url": "https://zero.eu/it/eventi/336972-bamoff-performing-arts-rituali-spontanei-original-sound-from-a-future-world,milano/" },
+      { "title": "La guida di Zero agli eventi di settembre e ottobre di Volvo Studio Milano 2025", "type": "long form", "url": "https://zero.eu/it/news/la-guida-di-zero-agli-eventi-di-settembre-e-ottobre-a-volvo-studio-2025/" },
+      { "title": "La guida di Zero agli eventi di novembre e dicembre di Volvo Studio Milano 2025", "type": "long form", "url": "https://zero.eu/it/news/la-guida-di-zero-agli-eventi-di-novembre-e-dicembre-di-volvo-studio-2025/" },
+      { "title": "JAZZMI | Ëda Diaz", "type": "short form", "url": "https://zero.eu/it/eventi/349188-jazzmi-eda-diaz-volvo-studio,milano/" },
+      { "title": "Ariella Vidach AiEP Kōreosfera", "type": "short form", "url": "https://zero.eu/it/eventi/351635-ariella-vidach-aiep-koreosfera,milano/" },
+      { "title": "JAZZMI | Amy Gadiaga", "type": "short form", "url": "https://zero.eu/it/eventi/351641-jazzmi-amy-gadiaga,milano/" },
+      { "title": "I Metameccanici & Pacifico presentano: TURBO LENTO - Il turbolento viaggio della PV 544", "type": "short form", "url": "https://zero.eu/it/eventi/354352-i-metameccanici-pacifico-presentano-turbo-lento-il-turbolento-viaggio-della-pv-544,milano/" }
     ]
   },
   {

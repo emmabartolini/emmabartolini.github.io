@@ -34,6 +34,16 @@ const { lang } = Astro.params as { lang: Lang };
                 <span class="writing-arrow font-serif text-sm opacity-40 group-hover:opacity-100 transition-opacity select-none">+</span>
               </span>
             </button>
+          ) : item.detailSlug ? (
+            <a href={`/${lang}/writing/${item.detailSlug}/`} class="flex items-baseline justify-between gap-4 py-4 group">
+              <span class="font-serif text-base leading-snug group-hover:opacity-70 transition-opacity" style="letter-spacing: -0.06em;">{item.title}</span>
+              <span class="font-serif text-xs opacity-40 shrink-0" style="letter-spacing: -0.02em;">{item.type}</span>
+            </a>
+          ) : item.url ? (
+            <a href={item.url} target="_blank" rel="noopener noreferrer" class="flex items-baseline justify-between gap-4 py-4 group">
+              <span class="font-serif text-base leading-snug group-hover:opacity-70 transition-opacity" style="letter-spacing: -0.06em;">{item.title}</span>
+              <span class="font-serif text-xs opacity-40 shrink-0" style="letter-spacing: -0.02em;">{item.type}</span>
+            </a>
           ) : (
             <div class="flex items-baseline justify-between gap-4 py-4">
               <span class="font-serif text-base leading-snug" style="letter-spacing: -0.06em;">{item.title}</span>
@@ -45,7 +55,11 @@ const { lang } = Astro.params as { lang: Lang };
             <ul class="writing-sub hidden pb-4 pl-4 flex-col gap-0">
               {item.articles.map((article) => (
                 <li class="flex items-baseline justify-between gap-4 py-2 border-b border-ink/8">
-                  <span class="font-body opacity-70" style="letter-spacing: -0.04em; font-size: 0.875rem;">{article.title}</span>
+                  {article.url ? (
+                    <a href={article.url} target="_blank" rel="noopener noreferrer" class="font-body opacity-70 hover:opacity-100 transition-opacity" style="letter-spacing: -0.04em; font-size: 0.875rem;">{article.title}</a>
+                  ) : (
+                    <span class="font-body opacity-70" style="letter-spacing: -0.04em; font-size: 0.875rem;">{article.title}</span>
+                  )}
                   <span class="font-serif text-xs opacity-30 shrink-0" style="letter-spacing: -0.02em;">{article.type}</span>
                 </li>
               ))}
