@@ -1,30 +1,19 @@
 ---
-title: "Identità visiva per Studio Aperto"
+title: "Con.divisione 14"
 category: design
 year: 2024
-description: "Sviluppo dell'identità visiva completa per uno studio di architettura milanese."
 thumbnail: "/images/projects/identita-studio.jpg"
 hasDetail: true
-client: "Studio Aperto"
-role: "Art Direction, Brand Design"
+role: "graphic design, production support, community mediator"
 cover: "/images/projects/identita-studio-cover.jpg"
 order: 1
 ---
 
-## Il progetto
-
-Studio Aperto è uno studio di architettura milanese che aveva bisogno di un'identità capace di raccontare la sua filosofia: spazi che respirano, forme che dialogano con chi le abita.
-
-Il brief richiedeva semplicità e solidità, senza scivolare nel minimalismo sterile.
-
-## Il processo
-
-Siamo partiti da un'analisi del settore e da una serie di conversazioni con il team. Ne è emersa una direzione tipografica forte, costruita attorno a un logotipo serif con spaziatura ridotta.
-
-Il sistema cromatico si basa su tre colori: un bianco caldo, un grigio ardesia e un verde salvia discreto per gli accenti.
+Con.divisione è una residenza artistica fondata nel 2012 a Mola di Bari da Officina dell'Arte - APS. Ogni edizione riunisce artisti italiani e internazionali per esplorare criticamente il presente attraverso installazioni, performance e media diversi.
+Per la tredicesima edizione ho contribuito su più livelli: graphic design e produzione, per dare forma visiva e logistica alla residenza, e mediazione con la comunità creatasi, la parte che, in un progetto come questo, fa la differenza tra un evento e un incontro vero. Ho anche co-curato e sviluppato l’installazione Sproloquio Curatoriale.
 
 ![Moodboard iniziale](/images/projects/identita-studio-moodboard.jpg)
 
-## Il risultato
-
-Il nuovo sistema è stato applicato a biglietti da visita, carta intestata, presentazioni e profilo social. La risposta del cliente è stata positiva: "finalmente ci vediamo come vogliamo essere visti."
+Cosa succede a un luogo quando smette di essere vissuto e comincia a essere consumato?
+Il castello di Mola di Bari, con la sua stratificazione storica e architettonica rappresenta il contrasto tra identità locale e turismo di massa. L'immagine simbolo era un'insegna luminosa "HOTEL" sul tetto del castello. Ironica, scomoda, impossibile da ignorare. 
+Sedici opere distribuite su tre livelli del castello componevano un percorso da attraversare, non solo da guardare. Artiste e artisti da Italia, Brasile, Austria, Spagna, Turchia e Bielorussia hanno portato prospettive molto diverse sugli stessi temi - turistificazione, ecologia, diritti, conflitti globali - senza mai perdere il contatto con il territorio specifico di Mola e con le persone che lo abitano. La serata finale del 30 agosto non era solo una mostra aperta: era un evento scandito da performance, installazioni sonore e momenti di dialogo costruiti per far incontrare artisti  e comunità locale.
