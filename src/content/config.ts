@@ -12,6 +12,7 @@ const projects = defineCollection({
     client: z.string().optional(),
     role: z.string().optional(),
     cover: z.string().optional(),
+    externalUrl: z.string().optional(),
     intro: z.string().optional(),
     gallery: z.array(z.string()).optional(),
     order: z.number().default(0),

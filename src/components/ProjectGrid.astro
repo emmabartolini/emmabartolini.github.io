@@ -11,6 +11,7 @@ interface Project {
   hasDetail: boolean;
   description?: string;
   role?: string;
+  externalUrl?: string;
 }
 
 interface Props {
@@ -49,6 +50,7 @@ const categoryColors: Record<string, string> = {
       lang={lang}
       description={project.description}
       role={project.role}
+      externalUrl={project.externalUrl}
     />
   ))}
 </div>

@@ -12,9 +12,10 @@ interface Props {
   lang: Lang;
   description?: string;
   role?: string;
+  externalUrl?: string;
 }
 
-const { title, category, year, thumbnail, slug, hasDetail, lang, description, role } = Astro.props;
+const { title, category, year, thumbnail, slug, hasDetail, lang, description, role, externalUrl } = Astro.props;
 
 const categoryColors: Record<string, string> = {
   design: '#FF5733',
@@ -29,13 +30,14 @@ const categoryPaths: Record<string, string> = {
 };
 
 const color = categoryColors[category];
-const detailHref = hasDetail ? `/${lang}/${categoryPaths[category]}/${slug}/` : null;
+const href = externalUrl ?? (hasDetail ? `/${lang}/${categoryPaths[category]}/${slug}/` : null);
+const isExternal = !!externalUrl;
 const categoryLabel = t(lang, `category.${category}` as any);
 ---
 
 <div class="project-card group" data-category={category}>
-  {detailHref ? (
-    <a href={detailHref} class="block">
+  {href ? (
+    <a href={href} class="block" {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>
       <div class="overflow-hidden aspect-[4/3] bg-ink/5 mb-4">
         {thumbnail
           ? <img src={thumbnail} alt={title} class="w-full h-full object-cover" loading="lazy" />
