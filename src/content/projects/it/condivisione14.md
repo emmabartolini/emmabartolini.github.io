@@ -2,11 +2,11 @@
 title: "Con.divisione 14"
 category: design
 year: 2024
-thumbnail: "/images/projects/identita-studio.jpg"
+thumbnail: "public/images/condivisione14/thumbnail.jpg"
 description: "Una breve descrizione del progetto"
 hasDetail: true
 role: "graphic design, production support, community mediator"
-cover: "/images/projects/identita-studio-cover.jpg"
+cover: "public/images/condivisione14/cover.png"
 order: 1
 ---
 
