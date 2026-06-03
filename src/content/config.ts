@@ -6,7 +6,7 @@ const projects = defineCollection({
     title: z.string(),
     category: z.enum(['design', 'writing', 'education']),
     year: z.number(),
-    description: z.string(),
+    description: z.string().optional(),
     thumbnail: z.string().optional(),
     hasDetail: z.boolean().default(false),
     client: z.string().optional(),
