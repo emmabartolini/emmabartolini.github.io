@@ -1,6 +1,8 @@
 ---
 title: "dinamite – libreriatempo"
 category: education
+crossRef: "dinamite-libreriatempo"
+crossRefCategory: "design"
 year: 2019
 thumbnail: "/images/dinamite-libreriatempo/thumbnail.jpg"
 hasDetail: false
