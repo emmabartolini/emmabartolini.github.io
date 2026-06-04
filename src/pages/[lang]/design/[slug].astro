@@ -136,14 +136,11 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
     }
   </style>
 
-  <script>
-    document.querySelectorAll<HTMLElement>('.gallery-wrapper').forEach((wrapper)
-   => {
-      const track = wrapper.querySelector<HTMLElement>('.gallery-track');
-      const prev =
-  wrapper.querySelector<HTMLButtonElement>('.gallery-btn-prev');
-      const next =
-  wrapper.querySelector<HTMLButtonElement>('.gallery-btn-next');
+   <script>
+    document.querySelectorAll('.gallery-wrapper').forEach((wrapper) => {
+      const track = wrapper.querySelector('.gallery-track');
+      const prev = wrapper.querySelector('.gallery-btn-prev');
+      const next = wrapper.querySelector('.gallery-btn-next');
       if (!track || !prev || !next) return;
       prev.addEventListener('click', () => track.scrollBy({ left: -420,
   behavior: 'smooth' }));
