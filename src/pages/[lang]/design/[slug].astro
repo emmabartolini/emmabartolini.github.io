@@ -1,32 +1,37 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { t, type Lang } from '../../../i18n/translations';
+  import { getCollection } from 'astro:content';
+  import BaseLayout from '../../../layouts/BaseLayout.astro';
+  import { t, type Lang } from '../../../i18n/translations';
 
-export async function getStaticPaths() {
-  const allProjects = await getCollection('projects');
-  return allProjects
-    .filter((entry) => entry.data.category === 'design' && entry.data.hasDetail)
-    .map((entry) => {
-      const lang = entry.id.split('/')[0] as Lang;
-      const slug = entry.slug.replace(`${lang}/`, '');
-      return { params: { lang, slug }, props: { entry } };
-    });
-}
+  export async function getStaticPaths() {
+    const allProjects = await getCollection('projects');
+    return allProjects
+      .filter((entry) => entry.data.category === 'design' &&
+  entry.data.hasDetail)
+      .map((entry) => {
+        const lang = entry.id.split('/')[0] as Lang;
+        const slug = entry.slug.replace(`${lang}/`, '');
+        return { params: { lang, slug }, props: { entry } };
+      });
+  }
 
-const { entry } = Astro.props;
-const { lang, slug } = Astro.params as { lang: Lang; slug: string };
-const { Content } = await entry.render();
+  const { entry } = Astro.props;
+  const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+  const { Content } = await entry.render();
 
-const allProjects = await getCollection('projects', (e) =>
-  e.id.startsWith(`${lang}/`) && e.data.category === 'design' && e.data.hasDetail
-);
-allProjects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+  const allProjects = await getCollection('projects', (e) =>
+    e.id.startsWith(`${lang}/`) && e.data.category === 'design' &&
+  e.data.hasDetail
+  );
+  allProjects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
-const currentIndex = allProjects.findIndex((p) => p.slug.replace(`${lang}/`, '') === slug);
-const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
-const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
- const extraCategoryLabels: Record<string, string> = {
+  const currentIndex = allProjects.findIndex((p) => p.slug.replace(`${lang}/`,
+  '') === slug);
+  const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
+  const nextProject = currentIndex < allProjects.length - 1 ?
+  allProjects[currentIndex + 1] : null;
+
+  const extraCategoryLabels: Record<string, string> = {
     design: t(lang, 'category.design'),
     writing: t(lang, 'category.writing'),
     education: t(lang, 'category.education'),
@@ -34,51 +39,66 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
   const extraCategoryColors: Record<string, string> = {
     design: '#FF5733', writing: '#2563EB', education: '#16A34A',
   };
----
+  ---
 
-<BaseLayout title={entry.data.title} lang={lang}>
-  <div class="max-w-7xl mx-auto px-6 pt-10">
-    <a
-      href={`/${lang}/design/`}
-      class="font-serif text-sm opacity-50 hover:opacity-100 transition-opacity inline-block mb-12"
-      style="letter-spacing: -0.04em;"
-    >
-      {t(lang, 'project.back.design')}
-    </a>
+  <BaseLayout title={entry.data.title} lang={lang}>
+    <div class="max-w-7xl mx-auto px-6 pt-10">
+      <a
+        href={`/${lang}/design/`}
+        class="font-serif text-sm opacity-50 hover:opacity-100
+  transition-opacity inline-block mb-12"
+        style="letter-spacing: -0.04em;"
+      >
+        {t(lang, 'project.back.design')}
+      </a>
 
-     <div class="flex items-center gap-3 flex-wrap">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 flex-wrap">
           <span class="font-serif text-xs" style="color: #FF5733;
   letter-spacing: -0.02em;">
             ● {t(lang, 'category.design')} · {entry.data.year}
           </span>
           {entry.data.extraCategory && (
-    <span class="font-serif text-xs" style={`color:
+            <span class="font-serif text-xs" style={`color:
   ${extraCategoryColors[entry.data.extraCategory]}; letter-spacing: -0.02em;`}>
-      ● {extraCategoryLabels[entry.data.extraCategory]}
-    </span>
-  )}
+              ● {extraCategoryLabels[entry.data.extraCategory]}
+            </span>
+          )}
         </div>
-
-  {entry.data.cover && (
-    <div class="max-w-7xl mx-auto px-6 mb-12">
-      <img
-        src={entry.data.cover}
-        alt={entry.data.title}
-        class="w-1/2 h-auto"
-        loading="eager"
-      />
+        <h1 class="font-serif text-4xl sm:text-5xl mt-3 mb-6 leading-tight"
+  style="letter-spacing: -0.06em;">
+          {entry.data.title}
+        </h1>
+        {(entry.data.client || entry.data.role) && (
+          <p class="font-body text-sm opacity-50 mb-10" style="letter-spacing:
+  -0.02em;">
+            {[entry.data.client, entry.data.role].filter(Boolean).join(' · ')}
+          </p>
+        )}
+      </div>
     </div>
-  )}
 
-  {entry.data.intro && (
-    <div class="max-w-2xl mx-auto px-6 mb-16">
-      <p class="font-body leading-relaxed opacity-80" style="letter-spacing: -0.04em; font-size: 1.125rem; line-height: 1.8;">
-        {entry.data.intro}
-      </p>
-    </div>
-  )}
+    {entry.data.cover && (
+      <div class="max-w-7xl mx-auto px-6 mb-12">
+        <img
+          src={entry.data.cover}
+          alt={entry.data.title}
+          class="w-1/2 h-auto"
+          loading="eager"
+        />
+      </div>
+    )}
 
-  {entry.data.gallery && entry.data.gallery.length > 0 && (
+    {entry.data.intro && (
+      <div class="max-w-2xl mx-auto px-6 mb-16">
+        <p class="font-body leading-relaxed opacity-80" style="letter-spacing:
+  -0.04em; font-size: 1.125rem; line-height: 1.8;">
+          {entry.data.intro}
+        </p>
+      </div>
+    )}
+
+    {entry.data.gallery && entry.data.gallery.length > 0 && (
       <div class="gallery-wrapper relative mb-16">
         <div class="gallery-track overflow-x-auto">
           <div class="flex gap-4 px-6 pb-4" style="width: max-content;">
@@ -107,33 +127,36 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
       </div>
     )}
 
-  <div class="max-w-2xl mx-auto px-6 pb-20 prose-project">
-    <Content />
-  </div>
+    <div class="max-w-2xl mx-auto px-6 pb-20 prose-project">
+      <Content />
+    </div>
 
-  <div class="max-w-7xl mx-auto px-6 pb-20 border-t border-ink/10 pt-10 flex justify-between items-center">
-    {prevProject ? (
-      <a
-        href={`/${lang}/design/${prevProject.slug.replace(`${lang}/`, '')}/`}
-        class="font-serif text-sm opacity-50 hover:opacity-100 transition-opacity"
-        style="letter-spacing: -0.04em;"
-      >
-        {t(lang, 'project.prev')}
-      </a>
-    ) : <span />}
-    {nextProject ? (
-      <a
-        href={`/${lang}/design/${nextProject.slug.replace(`${lang}/`, '')}/`}
-        class="font-serif text-sm opacity-50 hover:opacity-100 transition-opacity"
-        style="letter-spacing: -0.04em;"
-      >
-        {t(lang, 'project.next')}
-      </a>
-    ) : <span />}
-  </div>
-</BaseLayout>
+    <div class="max-w-7xl mx-auto px-6 pb-20 border-t border-ink/10 pt-10 flex
+  justify-between items-center">
+      {prevProject ? (
+        <a
+          href={`/${lang}/design/${prevProject.slug.replace(`${lang}/`, '')}/`}
+          class="font-serif text-sm opacity-50 hover:opacity-100
+  transition-opacity"
+          style="letter-spacing: -0.04em;"
+        >
+          {t(lang, 'project.prev')}
+        </a>
+      ) : <span />}
+      {nextProject ? (
+        <a
+          href={`/${lang}/design/${nextProject.slug.replace(`${lang}/`, '')}/`}
+          class="font-serif text-sm opacity-50 hover:opacity-100
+  transition-opacity"
+          style="letter-spacing: -0.04em;"
+        >
+          {t(lang, 'project.next')}
+        </a>
+      ) : <span />}
+    </div>
+  </BaseLayout>
 
- <style>
+  <style>
     .gallery-track {
       scrollbar-width: none;
     }
@@ -142,7 +165,7 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
     }
   </style>
 
-   <script>
+  <script>
     document.querySelectorAll('.gallery-wrapper').forEach((wrapper) => {
       const track = wrapper.querySelector('.gallery-track');
       const prev = wrapper.querySelector('.gallery-btn-prev');

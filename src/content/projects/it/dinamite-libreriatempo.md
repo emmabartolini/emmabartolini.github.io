@@ -1,6 +1,7 @@
 ---
 title: "dinamite – libreriatempo"
 category: design
+extraCategory: education
 year: 2019
 thumbnail: "/images/dinamite-libreriatempo/thumbnail.jpg"
 hasDetail: true

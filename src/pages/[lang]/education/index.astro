@@ -12,7 +12,8 @@ export function getStaticPaths() {
 const { lang } = Astro.params as { lang: Lang };
 
 const allProjects = await getCollection('projects', (entry) =>
-  entry.id.startsWith(`${lang}/`) && entry.data.category === 'education'
+  entry.id.startsWith(`${lang}/`) && (entry.data.category === 'education' ||
+  entry.data.extraCategory === 'education')
 );
 
 const projects = allProjects
