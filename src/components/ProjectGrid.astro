@@ -1,4 +1,5 @@
-import ProjectCard from './ProjectCard.astro';
+---
+  import ProjectCard from './ProjectCard.astro';
   import { t, type Lang } from '../i18n/translations';
 
    interface Project {
@@ -82,30 +83,28 @@ import ProjectCard from './ProjectCard.astro';
   )}
 
   <script>
-    const tabs = document.querySelectorAll<HTMLButtonElement>('#filter-tabs
-  .filter-btn');
-    const cards = document.querySelectorAll<HTMLElement>('#projects-grid
-  .project-card');
+    const tabs = document.querySelectorAll('#filter-tabs .filter-btn');
+    const cards = document.querySelectorAll('#projects-grid .project-card');
 
     const inkColor = '#3B0310';
     const creamColor = '#F5F0E8';
 
-    function applyActiveStyle(btn: HTMLButtonElement) {
+    function applyActiveStyle(btn) {
       const color = btn.dataset.color ?? inkColor;
       btn.style.backgroundColor = color;
       btn.style.color = creamColor;
       btn.style.borderColor = color;
     }
 
-    function clearActiveStyle(btn: HTMLButtonElement) {
+    function clearActiveStyle(btn) {
       btn.style.removeProperty('background-color');
       btn.style.removeProperty('color');
       btn.style.removeProperty('border-color');
     }
 
     if (tabs.length > 0) {
-      const initialActive =
-  document.querySelector<HTMLButtonElement>('#filter-tabs .filter-btn.active');
+      const initialActive = document.querySelector('#filter-tabs
+  .filter-btn.active');
       if (initialActive) applyActiveStyle(initialActive);
 
       tabs.forEach((tab) => {
@@ -137,8 +136,7 @@ import ProjectCard from './ProjectCard.astro';
     const loadMoreContainer = document.getElementById('load-more-container');
 
     if (loadMoreBtn && loadMoreContainer) {
-      const allCards =
-  Array.from(document.querySelectorAll<HTMLElement>('#projects-grid
+      const allCards = Array.from(document.querySelectorAll('#projects-grid
   .project-card'));
       const limit = window.innerWidth >= 1024 ? 9 : 6;
 
