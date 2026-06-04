@@ -38,20 +38,19 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
       {t(lang, 'project.back.education')}
     </a>
 
-    <div class="max-w-3xl">
-      <span class="font-serif text-xs" style="color: #16A34A; letter-spacing: -0.02em;">
-        ● {t(lang, 'category.education')} · {entry.data.year}
-      </span>
-      <h1 class="font-serif text-4xl sm:text-5xl mt-3 mb-6 leading-tight" style="letter-spacing: -0.06em;">
-        {entry.data.title}
-      </h1>
-      {(entry.data.client || entry.data.role) && (
-        <p class="font-body text-sm opacity-50 mb-10" style="letter-spacing: -0.02em;">
-          {[entry.data.client, entry.data.role].filter(Boolean).join(' · ')}
-        </p>
-      )}
-    </div>
-  </div>
+     <div class="flex items-center gap-3 flex-wrap">
+          <span class="font-serif text-xs" style="color: #16A34A;
+  letter-spacing: -0.02em;">
+            ● {t(lang, 'category.education')} · {entry.data.year}
+          </span>
+          {entry.data.extraCategory && (
+            <span class="font-serif text-xs" style={`color: ${{ design:
+  '#FF5733', writing: '#2563EB', education: '#16A34A'
+  }[entry.data.extraCategory]}; letter-spacing: -0.02em;`}>
+              ● {t(lang, `category.${entry.data.extraCategory}` as any)}
+            </span>
+          )}
+        </div>
 
   {entry.data.cover && (
     <div class="max-w-7xl mx-auto px-6 mb-12">

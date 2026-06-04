@@ -2,16 +2,19 @@
 import ProjectCard from './ProjectCard.astro';
 import { t, type Lang } from '../i18n/translations';
 
-interface Project {
-  title: string;
-  category: 'design' | 'writing' | 'education';
-  year: number;
-  thumbnail?: string;
-  slug: string;
-  hasDetail: boolean;
-  description?: string;
-  role?: string;
-  externalUrl?: string;
+ interface Project {
+    title: string;
+    category: 'design' | 'writing' | 'education';
+    extraCategory?: 'design' | 'writing' | 'education';
+    year: number;
+    thumbnail?: string;
+    slug: string;
+    hasDetail: boolean;
+    description?: string;
+    role?: string;
+    externalUrl?: string;
+    crossRef?: string;
+    crossRefCategory?: 'design' | 'writing' | 'education';
 }
 
 interface Props {
@@ -51,6 +54,9 @@ const categoryColors: Record<string, string> = {
       description={project.description}
       role={project.role}
       externalUrl={project.externalUrl}
+      extraCategory={project.extraCategory}
+      crossRef={project.crossRef}
+      crossRefCategory={project.crossRefCategory}
     />
   ))}
 </div>
