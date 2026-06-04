@@ -1,5 +1,5 @@
 ---
-title: "Laboratorio di xilografia"
+title: "Laboratorio di isogravura"
 category: education
 year: 2025
 thumbnail: "/images/laboratorio-xilografia/thumbnail.jpg"
