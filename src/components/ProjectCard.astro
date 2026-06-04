@@ -40,9 +40,14 @@
     ?? (crossRef && crossRefCategory ?
   `/${lang}/${categoryPaths[crossRefCategory]}/${crossRef}/` : null);
   const isExternal = !!externalUrl;
-  const categoryLabel = t(lang, `category.${category}` as any);
-  const extraCategoryLabel = extraCategory ? t(lang, `category.${extraCategory}`
-   as any) : null;
+   const categoryLabels: Record<string, string> = {
+    design: t(lang, 'category.design'),
+    writing: t(lang, 'category.writing'),
+    education: t(lang, 'category.education'),
+  };
+  const categoryLabel = categoryLabels[category];
+  const extraCategoryLabel = extraCategory ? categoryLabels[extraCategory] :
+  null;
   ---
 
   <div class="project-card group" data-category={category}>

@@ -26,6 +26,14 @@ allProjects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 const currentIndex = allProjects.findIndex((p) => p.slug.replace(`${lang}/`, '') === slug);
 const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
 const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
+ const extraCategoryLabels: Record<string, string> = {
+    design: t(lang, 'category.design'),
+    writing: t(lang, 'category.writing'),
+    education: t(lang, 'category.education'),
+  };
+  const extraCategoryColors: Record<string, string> = {
+    design: '#FF5733', writing: '#2563EB', education: '#16A34A',
+  };
 ---
 
 <BaseLayout title={entry.data.title} lang={lang}>
@@ -44,12 +52,11 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
             ● {t(lang, 'category.design')} · {entry.data.year}
           </span>
           {entry.data.extraCategory && (
-            <span class="font-serif text-xs" style={`color: ${{ design:
-  '#FF5733', writing: '#2563EB', education: '#16A34A'
-  }[entry.data.extraCategory]}; letter-spacing: -0.02em;`}>
-              ● {t(lang, `category.${entry.data.extraCategory}` as any)}
-            </span>
-          )}
+    <span class="font-serif text-xs" style={`color:
+  ${extraCategoryColors[entry.data.extraCategory]}; letter-spacing: -0.02em;`}>
+      ● {extraCategoryLabels[entry.data.extraCategory]}
+    </span>
+  )}
         </div>
 
   {entry.data.cover && (
