@@ -1,112 +1,160 @@
----
 import ProjectCard from './ProjectCard.astro';
-import { t, type Lang } from '../i18n/translations';
+  import { t, type Lang } from '../i18n/translations';
 
- interface Project {
-    title: string;
-    category: 'design' | 'writing' | 'education';
-    extraCategory?: 'design' | 'writing' | 'education';
-    year: number;
-    thumbnail?: string;
-    slug: string;
-    hasDetail: boolean;
-    description?: string;
-    role?: string;
-    externalUrl?: string;
-    crossRef?: string;
-    crossRefCategory?: 'design' | 'writing' | 'education';
-}
+   interface Project {
+      title: string;
+      category: 'design' | 'writing' | 'education';
+      extraCategory?: 'design' | 'writing' | 'education';
+      year: number;
+      thumbnail?: string;
+      slug: string;
+      hasDetail: boolean;
+      description?: string;
+      role?: string;
+      externalUrl?: string;
+      crossRef?: string;
+      crossRefCategory?: 'design' | 'writing' | 'education';
+  }
 
-interface Props {
-  projects: Project[];
-  lang: Lang;
-  showFilters?: boolean;
-}
+  interface Props {
+    projects: Project[];
+    lang: Lang;
+    showFilters?: boolean;
+    showLoadMore?: boolean;
+  }
 
-const { projects, lang, showFilters = false } = Astro.props;
+  const { projects, lang, showFilters = false, showLoadMore = false } =
+  Astro.props;
 
-const categoryColors: Record<string, string> = {
-  design: '#FF5733',
-  writing: '#2563EB',
-  education: '#16A34A',
-};
----
+  const categoryColors: Record<string, string> = {
+    design: '#FF5733',
+    writing: '#2563EB',
+    education: '#16A34A',
+  };
 
-{showFilters && (
-  <div class="flex flex-wrap gap-2 mb-10" id="filter-tabs" role="group" aria-label="Filtra per categoria">
-    <button class="filter-btn active" data-filter="all">{t(lang, 'filter.all')}</button>
-    <button class="filter-btn" data-filter="design" data-color={categoryColors.design}>{t(lang, 'filter.design')}</button>
-    <button class="filter-btn" data-filter="writing" data-color={categoryColors.writing}>{t(lang, 'filter.writing')}</button>
-    <button class="filter-btn" data-filter="education" data-color={categoryColors.education}>{t(lang, 'filter.education')}</button>
+  const loadMoreLabel = lang === 'it' ? 'Carica altri' : lang === 'pt' ?
+  'Carregar mais' : 'Load more';
+  ---
+
+  {showFilters && (
+    <div class="flex flex-wrap gap-2 mb-10" id="filter-tabs" role="group"
+  aria-label="Filtra per categoria">
+      <button class="filter-btn active" data-filter="all">{t(lang,
+  'filter.all')}</button>
+      <button class="filter-btn" data-filter="design"
+  data-color={categoryColors.design}>{t(lang, 'filter.design')}</button>
+      <button class="filter-btn" data-filter="writing"
+  data-color={categoryColors.writing}>{t(lang, 'filter.writing')}</button>
+      <button class="filter-btn" data-filter="education"
+  data-color={categoryColors.education}>{t(lang, 'filter.education')}</button>
+    </div>
+  )}
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12"
+  id="projects-grid">
+    {projects.map((project) => (
+      <ProjectCard
+        title={project.title}
+        category={project.category}
+        year={project.year}
+        thumbnail={project.thumbnail}
+        slug={project.slug}
+        hasDetail={project.hasDetail}
+        lang={lang}
+        description={project.description}
+        role={project.role}
+        externalUrl={project.externalUrl}
+        extraCategory={project.extraCategory}
+        crossRef={project.crossRef}
+        crossRefCategory={project.crossRefCategory}
+      />
+    ))}
   </div>
-)}
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12" id="projects-grid">
-  {projects.map((project) => (
-    <ProjectCard
-      title={project.title}
-      category={project.category}
-      year={project.year}
-      thumbnail={project.thumbnail}
-      slug={project.slug}
-      hasDetail={project.hasDetail}
-      lang={lang}
-      description={project.description}
-      role={project.role}
-      externalUrl={project.externalUrl}
-      extraCategory={project.extraCategory}
-      crossRef={project.crossRef}
-      crossRefCategory={project.crossRefCategory}
-    />
-  ))}
-</div>
+  {showLoadMore && (
+    <div class="mt-16 text-center" id="load-more-container">
+      <button id="load-more-btn" class="font-serif text-sm border border-ink/30
+  px-8 py-3 hover:bg-ink hover:text-cream transition-colors"
+  style="letter-spacing: -0.04em;">
+        {loadMoreLabel}
+      </button>
+    </div>
+  )}
 
-<script>
-  const tabs = document.querySelectorAll<HTMLButtonElement>('#filter-tabs .filter-btn');
-  const cards = document.querySelectorAll<HTMLElement>('#projects-grid .project-card');
+  <script>
+    const tabs = document.querySelectorAll<HTMLButtonElement>('#filter-tabs
+  .filter-btn');
+    const cards = document.querySelectorAll<HTMLElement>('#projects-grid
+  .project-card');
 
-  const inkColor = '#3B0310';
-  const creamColor = '#F5F0E8';
+    const inkColor = '#3B0310';
+    const creamColor = '#F5F0E8';
 
-  function applyActiveStyle(btn: HTMLButtonElement) {
-    const color = btn.dataset.color ?? inkColor;
-    btn.style.backgroundColor = color;
-    btn.style.color = creamColor;
-    btn.style.borderColor = color;
-  }
+    function applyActiveStyle(btn: HTMLButtonElement) {
+      const color = btn.dataset.color ?? inkColor;
+      btn.style.backgroundColor = color;
+      btn.style.color = creamColor;
+      btn.style.borderColor = color;
+    }
 
-  function clearActiveStyle(btn: HTMLButtonElement) {
-    btn.style.removeProperty('background-color');
-    btn.style.removeProperty('color');
-    btn.style.removeProperty('border-color');
-  }
+    function clearActiveStyle(btn: HTMLButtonElement) {
+      btn.style.removeProperty('background-color');
+      btn.style.removeProperty('color');
+      btn.style.removeProperty('border-color');
+    }
 
-  if (tabs.length > 0) {
-    const initialActive = document.querySelector<HTMLButtonElement>('#filter-tabs .filter-btn.active');
-    if (initialActive) applyActiveStyle(initialActive);
+    if (tabs.length > 0) {
+      const initialActive =
+  document.querySelector<HTMLButtonElement>('#filter-tabs .filter-btn.active');
+      if (initialActive) applyActiveStyle(initialActive);
 
-    tabs.forEach((tab) => {
-      tab.addEventListener('mouseenter', () => {
-        if (!tab.classList.contains('active')) applyActiveStyle(tab);
-      });
-      tab.addEventListener('mouseleave', () => {
-        if (!tab.classList.contains('active')) clearActiveStyle(tab);
-      });
-      tab.addEventListener('click', () => {
-        const filter = tab.dataset.filter ?? 'all';
-
-        tabs.forEach((t) => {
-          t.classList.remove('active');
-          clearActiveStyle(t);
+      tabs.forEach((tab) => {
+        tab.addEventListener('mouseenter', () => {
+          if (!tab.classList.contains('active')) applyActiveStyle(tab);
         });
-        tab.classList.add('active');
-        applyActiveStyle(tab);
+        tab.addEventListener('mouseleave', () => {
+          if (!tab.classList.contains('active')) clearActiveStyle(tab);
+        });
+        tab.addEventListener('click', () => {
+          const filter = tab.dataset.filter ?? 'all';
 
-        cards.forEach((card) => {
-          const match = filter === 'all' || card.dataset.category === filter;
-          card.setAttribute('data-hidden', match ? 'false' : 'true');
+          tabs.forEach((t) => {
+            t.classList.remove('active');
+            clearActiveStyle(t);
+          });
+          tab.classList.add('active');
+          applyActiveStyle(tab);
+
+          cards.forEach((card) => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.setAttribute('data-hidden', match ? 'false' : 'true');
+          });
         });
       });
-    });
-  }
-</script>
+    }
+
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const loadMoreContainer = document.getElementById('load-more-container');
+
+    if (loadMoreBtn && loadMoreContainer) {
+      const allCards =
+  Array.from(document.querySelectorAll<HTMLElement>('#projects-grid
+  .project-card'));
+      const limit = window.innerWidth >= 1024 ? 9 : 6;
+
+      allCards.forEach((card, i) => {
+        card.setAttribute('data-load-hidden', i >= limit ? 'true' : 'false');
+      });
+
+      if (allCards.length <= limit) {
+        loadMoreContainer.style.display = 'none';
+      }
+
+      loadMoreBtn.addEventListener('click', () => {
+        allCards.forEach((card) => {
+          card.setAttribute('data-load-hidden', 'false');
+        });
+        loadMoreContainer.style.display = 'none';
+      });
+    }
+  </script>

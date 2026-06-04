@@ -70,6 +70,12 @@
 .project-card[data-hidden="true"] {
   display: none;
 }
+ .project-card[data-load-hidden="true"] {
+    display: none;
+  }
+.project-card a:hover {
+    opacity: 1;
+  }
 
 /* Prose for project detail */
 .prose-project h2 {
