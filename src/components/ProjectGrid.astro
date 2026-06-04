@@ -136,7 +136,7 @@
       if (loadMoreBtn && loadMoreContainer) {
         var allCards = Array.from(document.querySelectorAll('#projects-grid
   .project-card'));
-        var limit = window.innerWidth >= 1024 ? 9 : 6;
+        var limit = 6;
         allCards.forEach(function (card, i) {
           card.setAttribute('data-load-hidden', i >= limit ? 'true' : 'false');
         });
