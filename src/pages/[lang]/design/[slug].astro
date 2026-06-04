@@ -73,19 +73,33 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
   )}
 
   {entry.data.gallery && entry.data.gallery.length > 0 && (
-    <div class="mb-16 overflow-x-auto">
-      <div class="flex gap-4 px-6 pb-4" style="width: max-content;">
-        {entry.data.gallery.map((img: string) => (
-          <img
-            src={img}
-            alt=""
-            class="h-72 w-auto object-cover shrink-0"
-            loading="lazy"
-          />
-        ))}
+      <div class="gallery-wrapper relative mb-16">
+        <div class="gallery-track overflow-x-auto">
+          <div class="flex gap-4 px-6 pb-4" style="width: max-content;">
+            {entry.data.gallery.map((img: string) => (
+              <img
+                src={img}
+                alt=""
+                class="h-72 w-auto object-cover shrink-0"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </div>
+        <button
+          class="gallery-btn-prev absolute left-3 top-1/2 -translate-y-1/2 w-10
+  h-10 rounded-full flex items-center justify-center z-10"
+          style="background: rgba(245,240,232,0.9); color: #3B0310;"
+          aria-label="Precedente"
+        >←</button>
+        <button
+          class="gallery-btn-next absolute right-3 top-1/2 -translate-y-1/2 w-10
+   h-10 rounded-full flex items-center justify-center z-10"
+          style="background: rgba(245,240,232,0.9); color: #3B0310;"
+          aria-label="Successiva"
+        >→</button>
       </div>
-    </div>
-  )}
+    )}
 
   <div class="max-w-2xl mx-auto px-6 pb-20 prose-project">
     <Content />
@@ -112,3 +126,28 @@ const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentI
     ) : <span />}
   </div>
 </BaseLayout>
+
+ <style>
+    .gallery-track {
+      scrollbar-width: none;
+    }
+    .gallery-track::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <script>
+    document.querySelectorAll<HTMLElement>('.gallery-wrapper').forEach((wrapper)
+   => {
+      const track = wrapper.querySelector<HTMLElement>('.gallery-track');
+      const prev =
+  wrapper.querySelector<HTMLButtonElement>('.gallery-btn-prev');
+      const next =
+  wrapper.querySelector<HTMLButtonElement>('.gallery-btn-next');
+      if (!track || !prev || !next) return;
+      prev.addEventListener('click', () => track.scrollBy({ left: -420,
+  behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: 420, behavior:
+   'smooth' }));
+    });
+  </script>
