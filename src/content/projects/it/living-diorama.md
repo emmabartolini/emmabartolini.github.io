@@ -3,7 +3,7 @@ title: "Living diorama / Designs for the pluriverse"
 category: education
 year: 2021
 thumbnail: "/images/living-diorama/thumbnail.jpg"
-client: "Università degli studi di San Marino"
+client: "UNIRSM Design, Università degli studi di San Marino"
 hasDetail: true
 cover: "/images/living-diorama/cover.jpg"
 intro: >-
