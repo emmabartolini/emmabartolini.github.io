@@ -82,113 +82,66 @@
     </div>
   )}
 
- <script is:inline>
-    function initGrid() {
-      var tabs = document.querySelectorAll('#filter-tabs .filter-btn');
-      var cards = document.querySelectorAll('#projects-grid .project-card');
-      var inkColor = '#3B0310';
-      var creamColor = '#F5F0E8';
+ <script>
+    const tabs = document.querySelectorAll(`#filter-tabs .filter-btn`);
+    const cards = document.querySelectorAll(`#projects-grid .project-card`);
+    const inkColor = `#3B0310`;
+    const creamColor = `#F5F0E8`;
 
-      function applyActiveStyle(btn) {
-        var color = btn.dataset.color || inkColor;
-        btn.style.backgroundColor = color;
-        btn.style.color = creamColor;
-        btn.style.borderColor = color;
-      }
-
-      function clearActiveStyle(btn) {
-        btn.style.removeProperty('background-color');
-        btn.style.removeProperty('color');
-        btn.style.removeProperty('border-color');
-      }
-
-      if (tabs.length > 0) {
-        var initialActive = document.querySelector('#filter-tabs
-  .filter-btn.active');
-        if (initialActive) { applyActiveStyle(initialActive); }
-        tabs.forEach(function(tab) {
-          tab.addEventListener('mouseenter', function() {
-            if (!tab.classList.contains('active')) { applyActiveStyle(tab); }
-          });
-          tab.addEventListener('mouseleave', function() {
-            if (!tab.classList.contains('active')) { clearActiveStyle(tab); }
-          });
-          tab.addEventListener('click', function() {
-            var filter = tab.dataset.filter || 'all';
-            tabs.forEach(function(t) { t.classList.remove('active');
-  clearActiveStyle(t); });
-          });
-          tab.addEventListener('click', function() {
-            var filter = tab.dataset.filter || 'all';
-            tabs.forEach(function(t) { t.classList.remove('active'); clearActiveStyle(t);
-  });
-            tab.classList.add('active');
-            applyActiveStyle(tab);
-            cards.forEach(function(card) {
-      var cards = document.querySelectorAll('#projects-grid .project-card');
-      var inkColor = '#3B0310';
-      var creamColor = '#F5F0E8';
-
-      function applyActiveStyle(btn) {
-        var color = btn.dataset.color || inkColor;
-        btn.style.backgroundColor = color;
-        btn.style.color = creamColor;
-        btn.style.borderColor = color;
-      }
-
-      function clearActiveStyle(btn) {
-        btn.style.removeProperty('background-color');
-        btn.style.removeProperty('color');
-        btn.style.removeProperty('border-color');
-      }
-
-      if (tabs.length > 0) {
-        var initialActive = document.querySelector('#filter-tabs
-  .filter-btn.active');
-        if (initialActive) { applyActiveStyle(initialActive); }
-        tabs.forEach(function(tab) {
-          tab.addEventListener('mouseenter', function() {
-            if (!tab.classList.contains('active')) { applyActiveStyle(tab); }
-          });
-          tab.addEventListener('mouseleave', function() {
-            if (!tab.classList.contains('active')) { clearActiveStyle(tab); }
-          });
-          tab.addEventListener('click', function() {
-            var filter = tab.dataset.filter || 'all';
-            tabs.forEach(function(t) { t.classList.remove('active');
-  clearActiveStyle(t); });
-            tab.classList.add('active');
-            applyActiveStyle(tab);
-            cards.forEach(function(card) {
-              var match = filter === 'all' || card.dataset.category === filter;
-              card.setAttribute('data-hidden', match ? 'false' : 'true');
-            });
-          });
-        });
-      }
-
-      var loadMoreBtn = document.getElementById('load-more-btn');
-      var loadMoreContainer = document.getElementById('load-more-container');
-      if (loadMoreBtn && loadMoreContainer) {
-        var allCards = Array.from(document.querySelectorAll('#projects-grid
-  .project-card'));
-        var limit = 6;
-        allCards.forEach(function(card, i) {
-          card.setAttribute('data-load-hidden', i >= limit ? 'true' : 'false');
-        });
-        if (allCards.length <= limit) { loadMoreContainer.style.display =
-  'none'; }
-        loadMoreBtn.addEventListener('click', function() {
-          allCards.forEach(function(card) {
-  card.setAttribute('data-load-hidden', 'false'); });
-          loadMoreContainer.style.display = 'none';
-        });
-      }
+    function applyActiveStyle(btn) {
+      const color = btn.dataset.color || inkColor;
+      btn.style.backgroundColor = color;
+      btn.style.color = creamColor;
+      btn.style.borderColor = color;
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initGrid);
-    } else {
-      initGrid();
+    function clearActiveStyle(btn) {
+      btn.style.removeProperty(`background-color`);
+      btn.style.removeProperty(`color`);
+      btn.style.removeProperty(`border-color`);
+    }
+
+    if (tabs.length > 0) {
+      const initialActive = document.querySelector(`#filter-tabs
+  .filter-btn.active`);
+      if (initialActive) applyActiveStyle(initialActive);
+
+      tabs.forEach((tab) => {
+        tab.addEventListener(`mouseenter`, () => {
+          if (!tab.classList.contains(`active`)) applyActiveStyle(tab);
+        });
+        tab.addEventListener(`mouseleave`, () => {
+          if (!tab.classList.contains(`active`)) clearActiveStyle(tab);
+        });
+        tab.addEventListener(`click`, () => {
+          const filter = tab.dataset.filter || `all`;
+          tabs.forEach((t) => { t.classList.remove(`active`);
+  clearActiveStyle(t); });
+          tab.classList.add(`active`);
+          applyActiveStyle(tab);
+          cards.forEach((card) => {
+            const match = filter === `all` || card.dataset.category === filter;
+            card.setAttribute(`data-hidden`, match ? `false` : `true`);
+          });
+        });
+      });
+    }
+
+    const loadMoreBtn = document.getElementById(`load-more-btn`);
+    const loadMoreContainer = document.getElementById(`load-more-container`);
+    if (loadMoreBtn && loadMoreContainer) {
+      const allCards = Array.from(document.querySelectorAll(`#projects-grid
+  .project-card`));
+      const limit = 6;
+      allCards.forEach((card, i) => {
+        card.setAttribute(`data-load-hidden`, i >= limit ? `true` : `false`);
+      });
+      if (allCards.length <= limit) { loadMoreContainer.style.display = `none`;
+  }
+      loadMoreBtn.addEventListener(`click`, () => {
+        allCards.forEach((card) => { card.setAttribute(`data-load-hidden`,
+  `false`); });
+        loadMoreContainer.style.display = `none`;
+      });
     }
   </script>
