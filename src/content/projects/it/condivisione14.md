@@ -4,7 +4,6 @@ category: design
 year: 2024
 thumbnail: "/images/condivisione14/thumbnail.jpg"
 hasDetail: true
-client:
 role: "graphic design, production support, community mediator"
 cover: "/images/condivisione14/cover.png"
 intro: >-
