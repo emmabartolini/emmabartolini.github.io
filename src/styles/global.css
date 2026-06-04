@@ -66,9 +66,9 @@
   transform: scale(1.03);
 }
 
-/* Hidden by filter */
-.project-card[data-hidden="true"] {
-  display: none;
+ /* Hidden by filter */
+  .project-card[data-hidden="true"] {
+    display: none;
 }
  .project-card[data-load-hidden="true"] {
     display: none;
