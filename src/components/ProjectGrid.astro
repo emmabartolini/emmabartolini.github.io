@@ -82,9 +82,49 @@
     </div>
   )}
 
-  <script is:inline>
+ <script is:inline>
     function initGrid() {
       var tabs = document.querySelectorAll('#filter-tabs .filter-btn');
+      var cards = document.querySelectorAll('#projects-grid .project-card');
+      var inkColor = '#3B0310';
+      var creamColor = '#F5F0E8';
+
+      function applyActiveStyle(btn) {
+        var color = btn.dataset.color || inkColor;
+        btn.style.backgroundColor = color;
+        btn.style.color = creamColor;
+        btn.style.borderColor = color;
+      }
+
+      function clearActiveStyle(btn) {
+        btn.style.removeProperty('background-color');
+        btn.style.removeProperty('color');
+        btn.style.removeProperty('border-color');
+      }
+
+      if (tabs.length > 0) {
+        var initialActive = document.querySelector('#filter-tabs
+  .filter-btn.active');
+        if (initialActive) { applyActiveStyle(initialActive); }
+        tabs.forEach(function(tab) {
+          tab.addEventListener('mouseenter', function() {
+            if (!tab.classList.contains('active')) { applyActiveStyle(tab); }
+          });
+          tab.addEventListener('mouseleave', function() {
+            if (!tab.classList.contains('active')) { clearActiveStyle(tab); }
+          });
+          tab.addEventListener('click', function() {
+            var filter = tab.dataset.filter || 'all';
+            tabs.forEach(function(t) { t.classList.remove('active');
+  clearActiveStyle(t); });
+          });
+          tab.addEventListener('click', function() {
+            var filter = tab.dataset.filter || 'all';
+            tabs.forEach(function(t) { t.classList.remove('active'); clearActiveStyle(t);
+  });
+            tab.classList.add('active');
+            applyActiveStyle(tab);
+            cards.forEach(function(card) {
       var cards = document.querySelectorAll('#projects-grid .project-card');
       var inkColor = '#3B0310';
       var creamColor = '#F5F0E8';
