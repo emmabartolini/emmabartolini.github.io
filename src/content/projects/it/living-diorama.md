@@ -13,6 +13,9 @@ gallery:
   - "/images/living-diorama/gallery-02.jpg"
   - "/images/living-diorama/gallery-03.jpg"
   - "/images/living-diorama/gallery-04.jpg"
+  - "/images/living-diorama/gallery-05.jpg"
+  - "/images/living-diorama/gallery-06.jpg"
+  - "/images/living-diorama/gallery-07.jpg"
 order: 5
 ---
 Il corso ha esplorato, in collaborazione con il Centro Naturalistico Sammarinese, le possibilità di sentire, conoscere e comunicare per evocare nuove forme di solidarietà tra specie sul monte Titano. Parchi gioco notturni per insetti, tane, nidi, riserve per farfalle, fogli di compost per instaurare alleanze non-umane: dispositivi ecosistemici per promuovere strumentazioni conviviali e comunitarie, coinvolgendo collettivi umani e non umani. Ho seguito ricerca, sviluppo di alcune lezioni e preparazione dei materiali teorici e pratici. Le interpretazioni nate da studentesse e studenti durante il semestre sono state raccolte nelle fanzine di cui ho curato il layout: un sedicesimo come atlas visivo, un quartino di ricerca teorica e un manifesto delle riflessioni e scelte affrontate nel percorso.
