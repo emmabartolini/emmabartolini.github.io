@@ -61,51 +61,59 @@
       ]
     },
     {
-      "title": "Zero.eu X Il mito delle donne Festival",  "type": "long form", "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://zero.eu/eventi/319722-il-mito-delle-donne-festival-2024,milano/&ved=2ahUKEwj-iYer5seUAxXuywIHHbR4HVoQFnoECCAQAQ&usg=AOvVaw3wQy_U8dGd3gYTP1b0K_vb", 
+      "title": "Zero.eu X Il mito delle donne Festival", 
       "type": "long form",
       "expandable": false,
+      "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://zero.eu/eventi/319722-il-mito-delle-donne-festival-2024,milano/&ved=2ahUKEwj-iYer5seUAxXuywIHHbR4HVoQFnoECCAQAQ&usg=AOvVaw3wQy_U8dGd3gYTP1b0K_vb", 
       "articles": []
     },
     {
       "title": "Zero.eu - Roberto Sambonet: La teoria della forma",
       "type": "long form",
       "expandable": false,
+      "url": "https://zero.eu/it/eventi/310344-roberto-sambonet-la-teoria-della-forma,milano/",
       "articles": []
     },
     {
       "title": "Zero.eu - Museo del Design Italiano. Forme mobili",
       "type": "long form",
       "expandable": false,
+      "url": "https://zero.eu/it/eventi/321581-museo-del-design-italiano-forme-mobili,milano/",
       "articles": []
     },
     {
       "title": "Zero.eu - Guida Fuorisalone 2024",
       "type": "short form",
       "expandable": false,
+      "url": "https://zero.eu/it/fuorisalone/2024/",
       "articles": []
     },
     {
       "title": "Zero.eu - Inga Sempé: La casa imperfetta",
       "type": "short form",
       "expandable": false,
+      "url": "https://zero.eu/it/eventi/304159-inga-sempe-la-casa-imperfetta-triennale,milano/",
       "articles": []
     },
     {
       "title": "Zero.eu X BIM Milano - Summer Season 2024",
       "type": "long form",
       "expandable": false,
+      "url": "https://zero.eu/it/news/bim-summer-season-il-quartiere-bicocca-baciato-dalla-fortuna/",
       "articles": []
     },
     {
       "title": "Zero.eu X BIM Milano - BIM Fest 2024",
       "type": "short form",
       "expandable": false,
+      "url": "https://zero.eu/it/eventi/319110-bim-fest-2024,milano/",
       "articles": []
     },
     {
       "title": "Zero.eu X BIM Milano - BiM Summer Season: Open Evening",
       "type": "short form",
       "expandable": false,
+      "url": "https://zero.eu/it/eventi/311922-bim-summer-season-open-evening,milano/",
       "articles": []
     }
   ]
