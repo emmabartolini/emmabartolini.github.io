@@ -43,6 +43,10 @@ Tenho mais livros do que roupas e toda vez que me mudo machuco as costas porque,
 };
 
 const content = bio[lang];
+
+function parseLinks(text: string) {
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="border-b border-ink/40 hover:border-ink transition-colors">$1</a>');
+}
 ---
 
 <BaseLayout title={t(lang, 'nav.about')} lang={lang}>
@@ -56,7 +60,7 @@ const content = bio[lang];
         </p>
         <div class="font-body leading-relaxed opacity-80 space-y-4" style="letter-spacing: -0.03em; font-size: 1rem;">
           {content.body.split('\n\n').map((para) => (
-            <p>{para}</p>
+            <p set:html={parseLinks(para)} />
           ))}
         </div>
         <a
