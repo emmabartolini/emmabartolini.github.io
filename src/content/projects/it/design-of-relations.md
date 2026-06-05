@@ -12,7 +12,9 @@ gallery:
   - "/images/design-of-relations/gallery-01.jpg"
   - "/images/design-of-relations/gallery-02.jpg"
   - "/images/design-of-relations/gallery-03.jpg"
-  - "//images/design-of-relations/gallery-04.jpg"
-order: 7
+  - "/images/design-of-relations/gallery-04.jpg"
+  - "/images/design-of-relations/gallery-05.jpg"
+  - "/images/design-of-relations/gallery-06.jpg"
+order: 6
 ---
 Il percorso ha esplorato il design relazionale attraverso lezioni teoriche e workshop pratici, sperimentando metodologie che incoraggiavano collaborazione, uguaglianza e coesistenza. La seconda parte del semestre ha visto lo sviluppo di un progetto corale, focalizzato su nuove modalità relazionali e pratiche collettive orientate al bene comune. Ho contribuito con ricerca, assistenza in classe, sviluppo di alcune lezioni, preparazione dei materiali teorici e pratici, e progettazione del layout degli output finali
