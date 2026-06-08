@@ -11,8 +11,7 @@ intro: >-
   Ogni edizione riunisce artisti italiani e internazionali per esplorare criticamente il presente
   attraverso installazioni, performance e media diversi. Per la tredicesima edizione ho contribuito
   su più livelli: graphic design e produzione, per dare forma visiva e logistica alla residenza, e
-  mediazione con la comunità creatasi, la parte che, in un progetto come questo, fa la differenza tra
-  un evento e un incontro vero. Ho anche co-curato e sviluppato l'installazione Sproloquio Curatoriale.
+  mediazione con la comunità creatasi. Ho anche co-curato e sviluppato l'installazione Sproloquio Curatoriale.
 gallery:
   - "/images/condivisione14/gallery-01.jpg"
   - "/images/condivisione14/gallery-02.jpg"
