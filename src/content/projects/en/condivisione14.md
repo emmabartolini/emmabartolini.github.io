@@ -4,9 +4,8 @@ category: design
 year: 2024
 thumbnail: "/images/condivisione14/thumbnail.jpg"
 hasDetail: true
-client: "Con.divisione"
 role: "graphic design, production support, community mediator"
-cover: "/images/condivisione14/cover.jpg"
+cover: "/images/condivisione14/cover.png"
 intro: >-
   Con.divisione is an artistic residency founded in 2012 in Mola di Bari by Officina dell'Arte APS.
   Each edition brings together Italian and international artists to critically explore the present
