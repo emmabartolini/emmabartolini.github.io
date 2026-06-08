@@ -18,6 +18,10 @@ gallery:
   - "/images/condivisione14/gallery-01.jpg"
   - "/images/condivisione14/gallery-02.jpg"
   - "/images/condivisione14/gallery-03.jpg"
+  - "/images/condivisione14/gallery-04.jpg"
+  - "/images/condivisione14/gallery-05.jpg"
+  - "/images/condivisione14/gallery-06.jpg"
+  - "/images/condivisione14/gallery-07.jpg"
 order: 2
 ---
 
