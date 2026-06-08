@@ -36,6 +36,9 @@ export const ui = {
     'all.works': 'tutti i lavori',
     'page.design.intro': 'Mi occupo di design della comunicazione, uno strumento multidisciplinare che uso per connettere prospettive ed esigenze diverse, costruendo soluzioni e narrazioni che abbiano senso (non solo estetico) per me e per chi lavoro, siano aziende, privati o istituzioni. Sono pericolosamente interessata a progettare in modo etico e sostenibile, in tutti i sensi che possiamo dare a quella parola. Nel lavoro tengo conto delle relazioni tra persone, sistemi e contesti, senza ridurre la complessità a qualcosa di facile da vendere o a una slide. Anche se ne sono capace.',
     'page.writing.intro': 'Mi piacciono le parole. Mi piace leggere e scrivere, le basi della cosiddetta civiltà moderna, insomma, anche se su questa sto avendo molti dubbi. Scrivo a modo mio, e tutto parte sempre dalle mie esperienze: cerco di rendere i racconti personali. È così che ho iniziato a raccontare con seria leggerezza design, architettura, eventi, musica. Con la penna posso andare dappertutto. E sì: mai sottovalutare la scrittura a mano. Ha una personalità tutta sua, proprio per questo.',
+    'about.services': 'Servizi',
+    'about.reading.now': 'ora sto leggendo',
+    'about.reading.recent': 'ultimi titoli letti',
     'page.education.intro': "Di imparare, io non finisco mai. E mi piace farlo insieme ad altri. Mi sto avvicinando all'educazione informale, tra piccoli laboratori e babysitting, dopo essere stata tutor per il corso di Critica del Contemporaneo di Angela Rui al Corso di Design Triennale dell'Università di San Marino. Ora sto aggiustando il sogno di riportare in vita la mia libreria, questa volta con una ludoteca dentro. Chi ha deciso che imparare debba essere noioso?",
   },
   en: {
@@ -65,6 +68,9 @@ export const ui = {
     'all.works': 'all work',
     'page.design.intro': 'I work with communication design, a multidisciplinary tool I use to connect different perspectives and needs, building solutions and narratives that make sense (not just aesthetically) for me and for the people I work with, whether companies, individuals, or institutions. I have a dangerous interest in designing ethically and sustainably, in every sense we can give that word. In my work I account for the relationships between people, systems and contexts, without reducing complexity to something easy to sell or fit on a slide. Even though I can.',
     'page.writing.intro': 'I love words. I love reading and writing, the foundations of so-called modern civilisation, after all, though I\'m having quite a few doubts about that. I write in my own way, and everything always starts from my own experiences: I try to make my stories personal. That\'s how I started talking about design, architecture, events and music with serious lightness. With a pen I can go anywhere. And yes: never underestimate handwriting. It has its own personality, precisely because of that.',
+    'about.services': 'Services',
+    'about.reading.now': 'currently reading',
+    'about.reading.recent': 'recently read',
     'page.education.intro': 'I never stop learning. And I love doing it together with others. I\'m getting closer to informal education, through small workshops and babysitting, after working as a tutor for Angela Rui\'s course in Contemporary Critique at the BA Design programme of the University of San Marino. Now I\'m reshaping the dream of bringing my bookstore back to life, this time with a play space inside. Who decided that learning has to be boring?',
   },
   pt: {
@@ -94,6 +100,9 @@ export const ui = {
     'all.works': 'todos os trabalhos',
     'page.design.intro': 'Trabalho com design de comunicação, uma ferramenta multidisciplinar que uso para conectar perspectivas e necessidades diferentes, construindo soluções e narrativas que façam sentido (não só esteticamente) para mim e para quem trabalho, sejam empresas, pessoas físicas ou instituições. Tenho um interesse perigoso por projetar de forma ética e sustentável, em todos os sentidos que podemos dar a essa palavra. No trabalho levo em conta as relações entre pessoas, sistemas e contextos, sem reduzir a complexidade a algo fácil de vender ou a um slide. Mesmo que eu seja capaz disso.',
     'page.writing.intro': 'Gosto de palavras. Gosto de ler e escrever, a base da chamada civilização moderna, afinal, embora eu esteja tendo muitas dúvidas sobre isso. Escrevo do meu jeito, e tudo sempre parte das minhas experiências: busco tornar os relatos pessoais. Foi assim que comecei a falar sobre design, arquitetura, eventos e música com leveza séria. Com a caneta posso ir a qualquer lugar. E sim: nunca subestime a escrita à mão. Ela tem uma personalidade toda própria, justamente por isso.',
+    'about.services': 'Serviços',
+    'about.reading.now': 'estou lendo agora',
+    'about.reading.recent': 'últimos títulos lidos',
     'page.education.intro': 'Nunca paro de aprender. E adoro fazer isso junto com outras pessoas. Estou me aproximando da educação informal, entre pequenas oficinas e babysitting, depois de ter sido tutora no curso de Crítica do Contemporâneo de Angela Rui no curso de graduação em Design da Universidade de San Marino. Agora estou ajustando o sonho de trazer minha livraria de volta à vida, desta vez com uma brinquedoteca dentro. Quem decidiu que aprender tem que ser tedioso?',
   },
 } as const;

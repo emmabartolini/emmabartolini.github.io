@@ -80,7 +80,7 @@ function parseLinks(text: string) {
         </div>
 
         <div>
-          <p class="section-label mb-4">Servizi</p>
+          <p class="section-label mb-4">{t(lang, 'about.services')}</p>
           <ul class="space-y-2">
             {content.services.map((service) => (
               <li class="font-body text-sm border-b border-ink/10 py-2.5 flex items-center gap-3" style="letter-spacing: -0.02em;">
@@ -95,7 +95,7 @@ function parseLinks(text: string) {
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20 items-start">
       <div class="border border-ink/15 p-6">
-        <p class="section-label mb-5">ora sto leggendo</p>
+        <p class="section-label mb-5">{t(lang, 'about.reading.now')}</p>
         <ul class="space-y-3">
           <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
             <span class="opacity-80">I sogni si spiegano da soli</span>
@@ -113,7 +113,7 @@ function parseLinks(text: string) {
       </div>
 
       <div class="border border-ink/15 p-6">
-        <p class="section-label mb-5">ultimi titoli letti</p>
+        <p class="section-label mb-5">{t(lang, 'about.reading.recent')}</p>
         <ul class="space-y-3">
           <li class="font-body text-sm leading-snug" style="letter-spacing: -0.02em;">
             <span class="opacity-80">Agata e la pietra nera</span>
