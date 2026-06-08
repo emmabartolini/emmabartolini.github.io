@@ -6,7 +6,7 @@ thumbnail: "/images/mondi-nel-mondo/thumbnail.jpg"
 hasDetail: true
 cover: "/images/mondi-nel-mondo/cover.jpg"
 intro: >-
-  [text to be added]
+  This book was born from a family collaboration: the illustrations are by my sister Anita, who built her degree thesis around them, and I wrote the short stories that accompany them.
 gallery:
   - "/images/mondi-nel-mondo/gallery-01.jpg"
   - "/images/mondi-nel-mondo/gallery-02.jpg"
@@ -19,4 +19,6 @@ gallery:
 order: 1
 ---
 
-[text to be added]
+The starting point was a question: what would happen if we stopped treating the non-human world as a decorative backdrop to our existence? Each story doesn't describe animals and plants as objects of study, it meets them as active participants in networks of connection that work perfectly well without us. The intelligence we wanted to tell doesn't belong to any particular species: it emerges from ecosystems, from interactions, from what we still don't know how to name.
+The texts are short stories, not scientific fact sheets. The goal was to make something complex accessible without dumbing it down, so the language is simple, but precise terms appear, chemical processes, names of body parts. Not to show off: to leave a door open to curiosity.
+The book is aimed primarily at a young adult audience, but Anita's illustrations exist also for those with fewer years and more impatience to understand.
