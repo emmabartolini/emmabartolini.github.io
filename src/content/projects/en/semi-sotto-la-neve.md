@@ -1,5 +1,5 @@
 ---
-title: "Italy: a new collective landscape | semi sotto la neve reading room"
+title: "semi sotto la neve | Italy: a new collective landscape"
 category: education
 year: 2023
 thumbnail: "/images/semi-sotto-la-neve/thumbnail.jpg"
