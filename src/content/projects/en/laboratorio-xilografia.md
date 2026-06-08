@@ -7,7 +7,7 @@ hasDetail: true
 client: "Forró em Milão"
 cover: "/images/laboratorio-xilografia/cover.jpg"
 intro: >-
-  [text to be added]
+  Designed for the Festa Junina organised by Forró em Milão, a group I'm part of, this workshop for adults and children explored woodblock printing, adapted with materials suited to participants of all ages. 
 gallery:
   - "/images/laboratorio-xilografia/gallery-01.jpg"
   - "/images/laboratorio-xilografia/gallery-02.jpg"
@@ -20,3 +20,4 @@ gallery:
   - "/images/laboratorio-xilografia/gallery-09.jpg"
 order: 1
 ---
+Drawing from Cordel literature, typical of the northeastern Brazilian imaginary, we illustrated (or tried to, everyone was free to contribute according to their inspiration in the moment) themes from the Brazilian sertão and its literature, creating prints on coloured paper that we hung as decoration in the courtyard where the party took place.
