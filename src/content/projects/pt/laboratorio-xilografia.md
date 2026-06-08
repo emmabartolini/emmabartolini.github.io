@@ -4,7 +4,6 @@ category: education
 year: 2025
 thumbnail: "/images/laboratorio-xilografia/thumbnail.jpg"
 hasDetail: true
-client: "Forró em Milão"
 cover: "/images/laboratorio-xilografia/cover.jpg"
 intro: >-
   Pensada para a Festa Junina organizada pelo grupo Forró em Milão, do qual faço parte, a oficina para adultos e crianças explorou a técnica de xilogravura, adaptada com materiais adequados às idades dos participantes. 
