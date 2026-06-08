@@ -4,7 +4,6 @@ category: education
 year: 2025
 thumbnail: "/images/laboratorio-xilografia/thumbnail.jpg"
 hasDetail: true
-client: "Forró em Milão"
 cover: "/images/laboratorio-xilografia/cover.jpg"
 intro: >-
   Designed for the Festa Junina organised by Forró em Milão, a group I'm part of, this workshop for adults and children explored woodblock printing, adapted with materials suited to participants of all ages. 
