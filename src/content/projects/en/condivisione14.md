@@ -11,8 +11,7 @@ intro: >-
   Each edition brings together Italian and international artists to critically explore the present
   through installations, performances and various media. For the thirteenth edition I contributed at
   multiple levels: graphic design and production, giving visual and logistical form to the residency,
-  and community mediation — the part that, in a project like this, makes the difference between an
-  event and a true encounter. I also co-curated and developed the installation Sproloquio Curatoriale.
+  and community mediation. I also co-curated and developed the installation Sproloquio Curatoriale.
 gallery:
   - "/images/condivisione14/gallery-01.jpg"
   - "/images/condivisione14/gallery-02.jpg"
