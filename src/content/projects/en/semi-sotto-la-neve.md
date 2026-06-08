@@ -19,4 +19,4 @@ order: 2
 ---
 
 Words as seeds from which roots grow, adapting to and shaping the terrain they find themselves in — part of potential grammars for new vocabularies capable of defining alternative design tools that protect, encourage and defend the building of relationships with others different from us, equally part of the same ecosystem. The proposed volumes represent some of the possible constructive and concrete responses to questions and needs for change in the present, which enable a conscious, declared and organised reclaiming of design practice.
-Here is the list of titles, which I keep updated.
+<u>[Here](https://docs.google.com/spreadsheets/d/1uhPC7tgGsarHRfPbbH7yA0R8MOTpieny-FBH-xdphs8/edit?usp=sharing)</u> is the list of titles, which I keep updated.
