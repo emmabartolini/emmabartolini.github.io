@@ -38,9 +38,7 @@ const projects = allProjects
     <h1 class="font-serif text-4xl sm:text-5xl mb-6 max-w-2xl" style="letter-spacing: -0.06em;">
       {t(lang, 'nav.design')}
     </h1>
-    <p class="font-body text-base opacity-70 max-w-lg mb-16" style="letter-spacing: -0.04em;">
-      {t(lang, 'page.design.intro')}
-    </p>
+    <p class="font-body text-base opacity-70 max-w-lg mb-16" style="letter-spacing: -0.04em;" set:html={t(lang, 'page.design.intro')} />
     <ProjectGrid projects={projects} lang={lang} showFilters={false} />
   </div>
 </BaseLayout>

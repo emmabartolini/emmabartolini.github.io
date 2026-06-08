@@ -137,9 +137,7 @@ function parseLinks(text: string) {
 
     <div class="border-t border-ink/10 pt-16">
       <p class="section-label">{t(lang, 'section.contact')}</p>
-      <p class="font-serif text-2xl sm:text-3xl leading-snug max-w-xl mb-8" style="letter-spacing: -0.06em;">
-        {t(lang, 'contact.text')}
-      </p>
+      <p class="font-serif text-2xl sm:text-3xl leading-snug max-w-xl mb-8" style="letter-spacing: -0.06em;" set:html={t(lang, 'contact.text')} />
       <a
         href="mailto:ciaoemma@mailbox.org"
         class="font-serif text-2xl sm:text-3xl border-b border-ink/40 pb-0.5 hover:border-ink transition-colors"
