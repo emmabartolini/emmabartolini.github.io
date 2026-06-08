@@ -7,7 +7,7 @@ hasDetail: true
 client: "Forró em Milão"
 cover: "/images/laboratorio-xilografia/cover.jpg"
 intro: >-
-  [texto a adicionar]
+  Pensada para a Festa Junina organizada pelo grupo Forró em Milão, do qual faço parte, a oficina para adultos e crianças explorou a técnica de xilogravura, adaptada com materiais adequados às idades dos participantes. 
 gallery:
   - "/images/laboratorio-xilografia/gallery-01.jpg"
   - "/images/laboratorio-xilografia/gallery-02.jpg"
@@ -20,3 +20,4 @@ gallery:
   - "/images/laboratorio-xilografia/gallery-09.jpg"
 order: 1
 ---
+A partir da literatura de Cordel, típica do imaginário nordestino brasileiro, desenhamos (ou tentamos, cada um ficou livre para contribuir conforme a inspiração do momento) temas do sertão brasileiro e de sua literatura, realizando impressões em folhas coloridas que penduramos como decoração do pátio onde aconteceu a festa.
